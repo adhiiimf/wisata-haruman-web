@@ -52,3 +52,11 @@ Route::get('/package', function () {
 Route::get('/single', function () {
     return view('single');
 });
+
+Route::get('/404', function () {
+    return view('response.404');
+});
+
+Route::get('/maintenance', function () {
+    return view('response.maintenance');
+});
