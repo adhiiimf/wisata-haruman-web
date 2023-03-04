@@ -24,7 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     {{-- <link href="css/style.css" rel="stylesheet"> --}}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 </head>
 
 <body>
