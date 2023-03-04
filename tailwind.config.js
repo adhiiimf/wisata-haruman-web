@@ -6,7 +6,14 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
+    },
+    fontFamily: {
+      'poppins': ['Poppins'],
+    },
   },
   plugins: [],
 }
