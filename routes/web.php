@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,7 @@ Route::middleware(['auth:admins'])->group(function () {
 
     // role admin dashboard page
     Route::get('/adminDashboard', function () {
-        return view('pages.admin.dasboard');
+        return view('pages.admin.dashboard');
     })->name('pages.admin.dasboard');
 
     // role admin article page
@@ -30,9 +31,11 @@ Route::middleware(['auth:admins'])->group(function () {
     Route::get('/adminProduct', function () {
         return view('pages.admin.product');
     })->name('pages.admin.product');
+
+    Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.logout');
 });
 
-Route::middleware(['web'])->group(function () {
+Route::middleware(['guest:admins'])->group(function () {
     // landing page route
     Route::get('/', function () {
         return view('main');
@@ -54,9 +57,8 @@ Route::middleware(['web'])->group(function () {
     })->name('pages.guest.article');
 
     // login route
-    Route::get('/login', function () {
-        return view('auth.admin.login');
-    })->name('auth.admin.login');
+    Route::get('/login',[AdminController::class, 'loginpage'])->name('auth.admin.login');
+    Route::post('/auth/adminlogin', [AdminController::class, 'authcheck'])->name('auth.admin.logincheck');
 
     // error 404 pages
     Route::get('/404', function () {
