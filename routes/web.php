@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +27,17 @@ Route::middleware(['auth:admins'])->group(function () {
     Route::get('/adminArticle', function () {
         return view('pages.admin.article');
     })->name('pages.admin.article');
+
+    Route::get('/adminCreateArticle', function () {
+        return view('pages.admin.createarticle');
+    })->name('pages.admin.createarticle');
     
     // role admin product page
     Route::get('/adminProduct', function () {
         return view('pages.admin.product');
     })->name('pages.admin.product');
+
+    Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.article');
 
     Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.logout');
 });
