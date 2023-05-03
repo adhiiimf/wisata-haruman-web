@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +20,13 @@ use App\Http\Controllers\ArticleController;
 
 Route::middleware(['auth:admins'])->group(function () {
 
-    // role admin dashboard page
+    // start of admin dashboard feature
     Route::get('/adminDashboard', function () {
         return view('pages.admin.dashboard');
     })->name('pages.admin.dasboard');
+    // end of admin dashboard feature
 
-    // role admin article page
+    // start of admin article feature
     Route::get('/adminArticle', function () {
         return view('pages.admin.article');
     })->name('pages.admin.article');
@@ -32,13 +35,22 @@ Route::middleware(['auth:admins'])->group(function () {
         return view('pages.admin.createarticle');
     })->name('pages.admin.createarticle');
     
-    // role admin product page
+    Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.article');
+    // end of admin article feature
+
+    // start of admin product feature
     Route::get('/adminProduct', function () {
         return view('pages.admin.product');
     })->name('pages.admin.product');
 
-    Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.article');
+    Route::get('/adminCreateProduct', function () {
+        return view('pages.admin.createproduct');
+    })->name('pages.admin.createproduct');
 
+    Route::post('post/product',[ProductController::class,'postProduct'])->name('post.product');
+    // end of product feauture
+
+    // logout routes
     Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.logout');
 });
 
