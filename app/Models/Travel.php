@@ -13,10 +13,9 @@ class Travel extends Model
     protected $fillable = [
         'travelTitle',
         'travelImg-1',
-        'travelImg-2',
-        'travelImg-3',
         'description',
         'phoneNumber',
+        'travelStatus',
         'admins_id'
     ];
 }
