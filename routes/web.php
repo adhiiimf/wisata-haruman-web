@@ -6,6 +6,7 @@ use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TravelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,18 @@ Route::middleware(['auth:admins'])->group(function () {
 
     Route::post('post/product',[ProductController::class,'postProduct'])->name('post.product');
     // end of product feauture
+
+    // start of admin travel feature
+    Route::get('/adminTravel', function () {
+        return view('pages.admin.travel');
+    })->name('pages.admin.travel');
+
+    Route::get('/adminCreateTravel', function () {
+        return view('pages.admin.createtravel');
+    })->name('pages.admin.createtravel');
+
+    Route::post('post/travel',[TravelController::class,'postTravel'])->name('post.travel');
+    // end of travel feauture
 
     // logout routes
     Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.logout');
