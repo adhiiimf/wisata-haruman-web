@@ -22,15 +22,11 @@ use App\Http\Controllers\TravelController;
 Route::middleware(['auth:admins'])->group(function () {
 
     // start of admin dashboard feature
-    Route::get('/adminDashboard', function () {
-        return view('pages.admin.dashboard');
-    })->name('pages.admin.dasboard');
+    Route::get('/adminDashboard',[AdminController::class,'dashboard'])->name('pages.admin.dasboard');
     // end of admin dashboard feature
 
     // start of admin article feature
-    Route::get('/adminArticle', function () {
-        return view('pages.admin.article');
-    })->name('pages.admin.article');
+    Route::get('/adminArticle', [ArticleController::class,'show'])->name('pages.admin.article');
 
     Route::get('/adminCreateArticle', function () {
         return view('pages.admin.createarticle');
@@ -40,9 +36,7 @@ Route::middleware(['auth:admins'])->group(function () {
     // end of admin article feature
 
     // start of admin product feature
-    Route::get('/adminProduct', function () {
-        return view('pages.admin.product');
-    })->name('pages.admin.product');
+    Route::get('/adminProduct', [ProductController::class,'show'])->name('pages.admin.product');
 
     Route::get('/adminCreateProduct', function () {
         return view('pages.admin.createproduct');
@@ -52,9 +46,7 @@ Route::middleware(['auth:admins'])->group(function () {
     // end of product feauture
 
     // start of admin travel feature
-    Route::get('/adminTravel', function () {
-        return view('pages.admin.travel');
-    })->name('pages.admin.travel');
+    Route::get('/adminTravel', [TravelController::class,'show'])->name('pages.admin.travel');
 
     Route::get('/adminCreateTravel', function () {
         return view('pages.admin.createtravel');
