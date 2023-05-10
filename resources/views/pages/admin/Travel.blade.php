@@ -2,7 +2,7 @@
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Produk - Wisata Haruman</title>
+    <title>Wisata - Wisata Haruman</title>
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     @endcomponent
     {{-- content --}}
     <div class=" sm:ml-64 p-5">
-        Product
+        Travel
     </div>
 </body>
 </html>
