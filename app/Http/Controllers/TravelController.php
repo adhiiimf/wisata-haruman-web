@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class TravelController extends Controller
 {
+    public function show() {
+        $admins_id = Auth::user()->first();
+        $travel_data = Travel::where('admins_id',$admins_id['id'])->get();
+        return $travel_data;
+        // return view('pages.admin.travel',[
+        //     'travel_data' => $travel_data
+        // ]);
+    }
+
     public function postTravel(Request $request)
     {
         $admins_id = Auth::user()->first();

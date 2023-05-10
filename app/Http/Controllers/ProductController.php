@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function show() {
+        $admins_id = Auth::user()->first();
+        $product_data = Product::where('admins_id',$admins_id['id'])->get();
+        return $product_data;
+        // return view('pages.admin.article',[
+        //     'product_data' => $product_data
+        // ]);
+    }
+
     public function postProduct(Request $request)
     {
         $admins_id = Auth::user()->first();

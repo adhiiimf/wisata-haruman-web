@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Product;
+use App\Models\Travel;
+use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -44,12 +47,23 @@ class AdminController extends Controller
 
     public function logout() {
         Auth::guard('admins')->logout();
-        
-        $request->session()->invalidate();
  
         $request->session()->regenerateToken();
-
+        
         return redirect('/');
+    }
+
+    public function dashboard() {
+        $admins_id = Auth::user()->first();
+        $product_total = Product::where('admins_id',$admins_id['id'])->count();
+        $travel_total = Travel::where('admins_id',$admins_id['id'])->count();
+        $article_total = Article::where('admins_id',$admins_id['id'])->count();
+        return view('pages.admin.dashboard',[
+            'name'=>$admins_id['name'],
+            'productTotal'=>$product_total,
+            'travelTotal'=>$travel_total,
+            'articleTotal'=>$article_total
+        ]);
     }
     
 }

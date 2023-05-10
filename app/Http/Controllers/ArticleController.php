@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
+    public function show() {
+        $admins_id = Auth::user()->first();
+        $article_data = Article::where('admins_id',$admins_id['id'])->get();
+        return $article_data;
+        // return view('pages.admin.article',[
+        //     'article_data' => $article_data
+        // ]);
+    }
+    
     public function postArticle(Request $request)
     {
         $admins_id = Auth::user()->first();
