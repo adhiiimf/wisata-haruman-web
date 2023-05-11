@@ -13,674 +13,404 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {{--  Glide.js  --}}
+    <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <!-- Map Libraries Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet s CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    {{--  <link href="css/style.css" rel="stylesheet">  --}}
     <link href="css/app.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <p><i class="fa fa-envelope mr-2"></i>info@wisataharuman.com</p>
-                        <p class="text-body px-3">|</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+62 8xx xxxx</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary pl-3" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
+<body class="font-poppins">
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="m-0 text-primary"><span class="text-dark">HARUM</span>AN</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="/" class="nav-item nav-link active">Beranda</a>
-                        <a href="#" class="nav-item nav-link">Wisata</a>
-                        
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profil</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="#" class="dropdown-item">Tentang Kami</a>
-                                <a href="#" class="dropdown-item">Sejarah</a>
-                                
-                            </div>
-                        </div>
-                        <a href="#" class="nav-item nav-link">Kontak Kami</a>
+    <div class="bg-violet-600 text-slate-100">
+        <div class="flex w-full p-2">
+            <a href="" class="w-1/5">
+                <div class="flex items-center ml-8">
+                    <span class="h-[35px] w-[35px] bg-violet-300 rounded-[50%] inline-block "></span>
+                    <div class="ml-2">
+                        <div class="">wisata</div>
+                        <div class=" font-bold">Haruman</div>
                     </div>
                 </div>
-            </nav>
+            </a>
+            <div class="flex justify-center items-center w-3/5">
+                <a href="/" class="px-3 py-2 mr-1 rounded-lg bg-violet-900">Beranda</a>
+                <a href="/travel" class="px-3 py-2  mr-1 hover:bg-violet-900 rounded-lg">Wisata</a>
+                <a href="/product" class="px-3 py-2 mr-1 hover:bg-violet-900 rounded-lg">Belanja</a>
+                <a href="/article" class="px-3 py-2 hover:bg-violet-900 rounded-lg">Artikel</a>
+            </div>
+            <a href="" class="flex justify-end items-center w-1/5">
+                <div class="flex mr-8 py-2 px-4 bg-green-600 rounded-lg">
+                    <a href="/login" class="flex items-center">
+                        <div class="h-full items-center p-1">
+                            <i class="fa fa-sign-in-alt"></i>
+                        </div>
+                        <div class="h-full p-1">
+                            <div class="">masuk</div>
+                        </div>
+                    </a>
+                </div>
+            </a>
         </div>
     </div>
     <!-- Navbar End -->
 
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="assets/destination.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Desa Wisata</h4>
-                            <h1 class="display-3 text-white mb-md-4">Ayo Jelajahi Desa Wisata Haruman</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Kontak Kami</a>
-                        </div>
-                    </div>
+    <!-- Welcome Start -->
+    <div class="flex justify-center bg-violet-600 text-slate-100 pt-8 pb-12">
+        <div class="container flex p-2 items-center">
+            <div class="w-1/2 flex flex-col 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl">
+                <div>
+                    <span class="leading-tight">
+                        Jelajahi Keindahan
+                        <div class="font-bold">Desa Haruman</div>
+                        Sekarang Juga
+                    </span>
                 </div>
-                <!-- <div class="carousel-item">
-                    <img class="w-100" src="assets/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Kopi</h4>
-                            <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                <a href="" class="flex text-base">
+                    <div class="flex py-2 px-4 mt-2 bg-slate-700 rounded-xl shadow-lg shadow-slate-800">
+                        <div class="flex items-center">
+                            <div class="h-full items-center p-1">
+                                <i class="fa fa-road"></i>
+                            </div>
+                            <div class="h-full p-1">
+                                <div class="">Jelajahi</div>
+                            </div>
                         </div>
                     </div>
-                </div> -->
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-prev-icon mb-n2"></span>
+            <div class="w-1/2">
+                <div class="mb-5 rounded-lg overflow-auto shadow-lg shadow-gray-700">
+                    <img src="assets/destination-7.jpg" alt="">
                 </div>
-            </a>
-            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-next-icon mb-n2"></span>
-                </div>
-            </a>
+                <hr class="border-2 border-violet-500">
+            </div>
         </div>
     </div>
-    <!-- Carousel End -->
+    <!-- Welcome End -->
 
-
-    <!-- Booking Start -->
-    <!-- <div class="container-fluid booking mt-5 pb-5">
-        <div class="container pb-5">
-            <div class="bg-light shadow" style="padding: 30px;">
-                <div class="row align-items-center" style="min-height: 60px;">
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
-                    </div>
+    <!-- Intro Start -->
+    <div class="flex justify-center bg-violet-700 text-slate-100 p-20">
+        <div class="container flex p-2 items-center">
+            <div class="w-1/2">
+                <div class="mb-5 rounded-lg overflow-auto shadow-lg shadow-gray-700">
+                    <img class="w-full" src="assets/destination-8.jpg" alt="">
                 </div>
+                <hr class="border-2 border-violet-500">
             </div>
-        </div>
-    </div> -->
-    <!-- Booking End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5">
-            <div class="row">
-                <div class="col-lg-6 hidden sm:block" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="assets/destination-2.jpg" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-5 pb-lg-5">
-                    <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Tentang Kami</h6>
-                        <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                        <div class="row mb-4">
-                            <div class="col-6">
-                                <img class="img-fluid" src="assets/destination-8.jpg" alt="">
-                            </div>
-                            <div class="col-6">
-                                <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary mt-1">Book Now</a>
-                    </div>
+            <div class="w-1/2 flex flex-col m-24">
+                <div>
+                    <h1 class="text-5xl">Apa itu <span class="font-bold">Desa Haruman?</span></h1>
+                    <hr class="w-1/4 mt-5 border-2 border-violet-500">
+                    <br>
+                    <p class="text-2xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, natus,
+                        doloremque ut dolore consectetur aliquam praesentium vel illo accusantium molestias,
+                        enim voluptatem rerum aut asperiores commodi! Harum numquam corporis at?
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
-
-
-    <!-- Feature Start -->
-    <div class="container-fluid pb-5">
-        <div class="container pb-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-money-check-alt text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Harga Terjangkau</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-award text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Layanan Terbaik</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-globe text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Worldwide Coverage</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
-
+    <!-- Intro End -->
 
     <!-- Destination Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinasi Wisata</h6>
-                <h1>Jelajahi Wisata Teratas</h1>
+    <div class="flex justify-center bg-violet-800 text-slate-100 p-20">
+        <div class="container p-2">
+            <div class="w-1/2 mb-10">
+                <h1 class="text-5xl">Destinasi <span class="font-bold">Haruman</span></h1>
+                <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Kebun Jeruk</h5>
-                        </a>
+            <div class="destinasi_glide">
+                <div class="glide__track relative mb-3" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Air Terjun
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Milky Way
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Petik Kebun
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Lainnya
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="glide__arrows w-full absolute top-1/2 -translate-y-1/2 z-20 flex justify-between"
+                        data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left ml-6" data-glide-dir="<"><i
+                                class="fas fa-chevron-circle-left text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
+                        <button class="glide__arrow glide__arrow--right mr-6" data-glide-dir=">"><i
+                                class="fas fa-chevron-circle-right text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Kebun Wortel</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Kopi</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">dll.</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">dll.</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="assets/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">dll.</h5>
-                        </a>
-                    </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Destination Start -->
+    <!-- Destination End -->
 
-
-    <!-- Service Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Layanan</h6>
-                <h1>Layanan Wisata</h1>
+    <!-- Belanja Start -->
+    <div class="flex justify-center bg-violet-200 text-slate-100 p-20">
+        <div class="container p-2">
+            <div class="w-1/2 mb-10">
+                <h1 class="text-5xl text-slate-900">Belanja <span class="font-bold">Haruman</span></h1>
+                <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                        <h5 class="mb-2">Panduan Wisata</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+            <div class="belanja_glide">
+                <div class="glide__track relative mb-3" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Kopi Arabika
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Jeruk Sunkist
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Wortel
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
+                                Lainnya
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="glide__arrows w-full absolute top-1/2 -translate-y-1/2 z-20 flex justify-between"
+                        data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left ml-6" data-glide-dir="<"><i
+                                class="fas fa-chevron-circle-left text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
+                        <button class="glide__arrow glide__arrow--right mr-6" data-glide-dir=">"><i
+                                class="fas fa-chevron-circle-right text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
-                        <h5 class="mb-2">Booking Wisata</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
-                        <h5 class="mb-2">Kontak Pemandu Wisata</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-
-    <!-- Packages Start -->
-    <!-- <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-                <h1>Pefect Tour Packages</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="assets/package-4.jpg" alt="">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Thailand</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 days</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$350</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Packages End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Pemandu Wisata</h6>
-                <h1>Tim Kami</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="text-center pb-4">
-                    <img class="img-fluid mx-auto" src="assets/avatar.png" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <span>Designation</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/avatar.png" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <span>Designation</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/avatar.png" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <span>Designation</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid mx-auto" src="assets/avatar.png" style="width: 100px; height: 100px;" >
-                    <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                        </p>
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <span>Designation</span>
-                    </div>
+                <div class="glide__bullets belanja_glide" data-glide-el="controls[nav]">
+                    <button class="glide__bullet !bg-purple-400 hover:!bg-purple-600 hover:!border-purple-600"
+                        data-glide-dir="=0"></button>
+                    <button class="glide__bullet !bg-purple-400 hover:!bg-purple-600 hover:!border-purple-600"
+                        data-glide-dir="=1"></button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Belanja End -->
 
-
-    <!-- Blog Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Blog Kami</h6>
-                <h1>Blog Terkini</h1>
+    <!-- Artikel Start -->
+    <div class="flex justify-center bg-purple-200 text-slate-100 p-20">
+        <div class="container p-2">
+            <div class="w-1/2 mb-10">
+                <h1 class="text-5xl text-slate-900">Artikel <span class="font-bold">Haruman</span></h1>
+                <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 col-md-6 mb-4 pb-2">
-                    <div class="blog-item">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/destination-2.jpg" alt="">
-                            <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">01</h6>
-                                <small class="text-white text-uppercase">Jan</small>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
-                                <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
-                            </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
-                        </div>
+            <div class="grid grid-cols-2 gap-8 mx-32 mt-12">
+                <div
+                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
+                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
                     </div>
+                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 pb-2">
-                    <div class="blog-item">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/destination-2.jpg" alt="">
-                            <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">01</h6>
-                                <small class="text-white text-uppercase">Jan</small>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
-                                <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
-                            </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
-                        </div>
+                <div
+                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
+                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
                     </div>
+                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 pb-2">
-                    <div class="blog-item">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/destination-2.jpg" alt="">
-                            <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">01</h6>
-                                <small class="text-white text-uppercase">Jan</small>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
-                                <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
-                            </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
-                        </div>
+                <div
+                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
+                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
                     </div>
+                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
                 </div>
+                <div
+                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
+                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
+                    </div>
+                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
+                </div>
+            </div>
+            <div class="flex float-right underline text-slate-900 mx-32 mt-3">
+                <a href="" class="text-2xl font-semibold">Artikel lainnya..</a>
             </div>
         </div>
     </div>
-    <!-- Blog End -->
-
+    <!-- Artikel End -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
-        <div class="row pt-5 justify-content-evenly">
-            <div class="d-flex">
-                <div class="col-lg-3 col-md-6 mb-5 pl-5">
-                    <a href="" class="navbar-brand">
-                        <h1 class="text-primary"><span class="text-white">HARUM</span>AN</h1>
-                    </a>
-                    <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
-                    <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
-                    <div class="d-flex justify-content-start">
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+    <div class="flex justify-center bg-purple-300 text-slate-900 p-20">
+        <div class="container p-2 flex">
+            <div class="w-1/2">
+                <div class="w-1/2 mb-10">
+                    <h1 class="text-4xl">wisata <span class="font-bold">Haruman</span></h1>
+                    <hr class="w-full mt-1 border-2 border-violet-500">
+                    <div class="text-xl">
+                        <div class="flex items-center">
+                            <div class="flex justify-center h-full w-1/12 items-center p-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="h-full w-full p-1">
+                                <div class="">helpdesk@wisataharuman.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex justify-center h-full w-1/12 items-center p-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="h-full w-full p-1">
+                                <div class="">Mekarsari, Kec.Cimaung, Kabupaten Bandung, Jawa Barat</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Layanan Kami</h5>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destination</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Packages</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Guides</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Testimonial</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                <div class="w-1/2 mb-10">
+                    <h1 class="text-4xl">explore <span class="font-bold">Us!</span></h1>
+                    <hr class="w-full mt-1 border-2 border-violet-500">
+                    <div class="text-xl">
+                        <div class="flex items-center">
+                            <div class="flex justify-center h-full w-1/12 items-center p-1">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <div class="h-full w-full p-1">
+                                <div class="">Destinasi Wisata</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex justify-center h-full w-1/12 items-center p-1">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                            <div class="h-full w-full p-1">
+                                <div class="">Belanja</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5 px-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Kontak Kami</h5>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Haruman, Cimaung, Jawa Barat</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+62 8xx xxxx</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@wisataharuman.com</p>
+            <div class="h-full w-1/2 rounded-2xl overflow-hidden shadow-2xl shadow-slate-800">
+                <div id="map" class="h-full w-full"></div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">wisataharuman.com</a>. All Rights Reserved.</a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
+    <hr class="w-full border-2 border-violet-500">
+    <div class="flex justify-center p-5 text-lg bg-purple-300 text-slate-700 hover:text-slate-900">
+        <div class="container cursor-default">
+            ©Wisata Haruman 2023
         </div>
     </div>
     <!-- Footer End -->
 
+    <style>
+        .glide__bullets {
+            bottom: 2em;
+            display: inline-flex;
+            list-style: none;
+        }
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        .glide__bullet {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            line-height: 0;
+            box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+            margin: 0 0.25em;
+        }
 
+        .glide__bullet:hover {
+            border: 2px solid white;
+        }
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        .glide__bullet--active {
+            background-color: white;
+        }
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+        .belanja_glide>.glide__bullet--active {
+            --tw-bg-opacity: 1 !important;
+            background-color: rgb(147 51 234 / var(--tw-bg-opacity)) !important;
+        }
+    </style>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    {{--  <script src="js/app.js"></script>  --}}
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        var destination_glide = new Glide('.destinasi_glide', {
+            type: 'slider',
+            bound: true,
+            startAt: 0,
+            perView: 3,
+            gap: 50,
+            peek: {
+                before: 0,
+                after: 200
+            }
+        })
+
+        var belanja_glide = new Glide('.belanja_glide', {
+            type: 'slider',
+            bound: true,
+            startAt: 0,
+            perView: 3,
+            gap: 50,
+            peek: {
+                before: 0,
+                after: 200
+            }
+        })
+
+        destination_glide.mount()
+        belanja_glide.mount()
+
+        {{--  Map Js  --}}
+
+        var map = L.map('map').setView([-7.072505262549012, 107.94232816547856], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([-7.072505262549012, 107.94232816547856]).addTo(map);
+    </script>
 </body>
 
 </html>
