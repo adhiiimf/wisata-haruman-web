@@ -42,6 +42,12 @@ Route::middleware(['auth:admins'])->group(function () {
         return view('pages.admin.createproduct');
     })->name('pages.admin.createproduct');
 
+    Route::get('/adminViewProduct/{product_id}',[ProductController::class,'showIndex'])->name('pages.admin.viewproduct');
+
+    Route::get('/adminDelProduct/{product_id}',[ProductController::class,'isDelete'])->name('pages.admin.deleteproduct');
+
+    Route::post('/adminDelProduct/del/{product_id}',[ProductController::class,'deleteNow'])->name('pages.admin.deleteproduct.fix');
+
     Route::post('post/product',[ProductController::class,'postProduct'])->name('post.product');
     // end of product feauture
 
