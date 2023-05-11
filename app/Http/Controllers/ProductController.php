@@ -10,8 +10,10 @@ class ProductController extends Controller
     public function show() {
         $admins_id = Auth::user()->first();
         $product_data = Product::where('admins_id',$admins_id['id'])->orderBy('created_at','desc')->get();
+        $admins_id = explode(' ',$admins_id->name)[0];
         // return $product_data;
         return view('pages.admin.product',[
+            'admin_name' => $admins_id,
             'product_data' => $product_data
         ]);
     }
@@ -56,8 +58,8 @@ class ProductController extends Controller
              'productImage' => ['required','mimes:png,jpg,jpeg'],
              'description' => 'required',
              'stocks' => 'required',
+             'isPreorder' => 'required',
              'phoneNumber' => 'required'
-            //  'admins_id' => 'required'
         ]);   
             // for thumbnail image
         if($request->file('productImage')){
@@ -72,6 +74,7 @@ class ProductController extends Controller
                 'productImage' => $thumPath,
                 'description' => $request->description,
                 'stocks' => $request->stocks,
+                'isPreorder' => $request->isPreorder,
                 'phoneNumber' => $request->phoneNumber,
                 'admins_id' => $admins_id['id']
         ]);

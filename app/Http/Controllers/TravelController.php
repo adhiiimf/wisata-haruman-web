@@ -9,11 +9,13 @@ class TravelController extends Controller
 {
     public function show() {
         $admins_id = Auth::user()->first();
-        $travel_data = Travel::where('admins_id',$admins_id['id'])->get();
-        return $travel_data;
-        // return view('pages.admin.travel',[
-        //     'travel_data' => $travel_data
-        // ]);
+        $travel_data = Travel::where('admins_id',$admins_id['id'])->orderBy('updated_at','desc')->get();
+        // return $travel_data;
+        $admins_id = explode(' ',$admins_id->name)[0];
+        return view('pages.admin.travel',[
+            'admin_name' => $admins_id,
+            'travel_data' => $travel_data
+        ]);
     }
 
     public function postTravel(Request $request)
@@ -21,15 +23,14 @@ class TravelController extends Controller
         $admins_id = Auth::user()->first();
         $this->validate($request, [
              'travelTitle' => 'required',
-             'travelImg-1' => ['required','mimes:png,jpg,jpeg','max:2048'],
+             'travelImage' => ['required','mimes:png,jpg,jpeg'],
              'description' => 'required',
-             'travelStatus' => 'required',
+             'travel_schedules_id' => 'required',
              'phoneNumber' => 'required'
-            //  'admins_id' => 'required'
         ]);   
             // for thumbnail image
-        if($request->file('travelImg-1')){
-            $file= $request->file('travelImg-1');
+        if($request->file('travelImage')){
+            $file= $request->file('travelImage');
             $filename= time().$file->getClientOriginalName();
             $file-> move(public_path('/travels'), $filename);
             $thumPath = '/travels/'. $filename;
@@ -37,9 +38,9 @@ class TravelController extends Controller
 
         $post = Travel::create([
                 'travelTitle' => $request->travelTitle,
-                'travelImg-1' => $thumPath,
+                'travelImage' => $thumPath,
                 'description' => $request->description,
-                'travelStatus' => $request->travelStatus,
+                'travel_schedules_id' => $request->travel_schedules_id,
                 'phoneNumber' => $request->phoneNumber,
                 'admins_id' => $admins_id['id']
         ]);

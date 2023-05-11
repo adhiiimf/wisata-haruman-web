@@ -10,7 +10,7 @@ class Travel extends Model
 {
     use HasFactory, Uuid;
 
-    protected $table = 'travel';
+    protected $table = 'travels';
 
     protected $fillable = [
         'travelTitle',
