@@ -52,14 +52,17 @@
                         <textarea id="description" name="description" class="border-purple-500 border-2 w-full rounded-xl py-4 px-4" rows="20" placeholder="Produk ini merupakan..."></textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Stok Barang</label>
+                    <input type="number" name="stocks" class="form-control rounded-xl border-purple-500 border-2 placeholder:text-gray-400 focus:border-purple-400" placeholder="500" />
+                </div>
                 <div>
-                    <label for="stocks">Ketersediaan Produk/Barang</label>
+                    <label for="stocks">Apakah harus Pre-Order?</label>
                 </div>
                 <div class="flex items-center mb-4">
-                    <select name="stocks" class="py-2 bg-purple-200 rounded-xl px-1">
-                        <option class="mx-2" value="1">Ada</option>
-                        <option class="mx-2" value="2">Pre-Order</option>
-                        <option class="mx-2" value="3">Habis</option>
+                    <select name="isPreorder" class="py-2 bg-purple-200 rounded-xl px-1">
+                        <option class="mx-2" value="0">Tidak</option>
+                        <option class="mx-2" value="1">Pre-Order</option>
                     </select>
                 </div>
                 <div class="form-group text-center mt-2">
