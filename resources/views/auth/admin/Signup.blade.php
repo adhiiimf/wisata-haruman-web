@@ -22,10 +22,10 @@
         class="flex flex-col justify-center items-center bg-slate-200 rounded-2xl shadow-2xl shadow-violet-900 px-16 py-12">
         @csrf
         <div class="flex items-center">
-            <span class="h-10 w-10 bg-violet-300 rounded-[50%] inline-block "></span>
+            <img src="/assets/logo-color.png" class="h-12 w-auto" alt="" srcset="">
             <div class="ml-2 text-2xl">
-                <div class="">wisata</div>
-                <div class=" font-bold">Haruman</div>
+                <div class="leading-none">wisata</div>
+                <div class="font-bold">Haruman</div>
             </div>
         </div>
 
