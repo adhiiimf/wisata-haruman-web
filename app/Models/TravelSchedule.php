@@ -6,18 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
 
-class Travel extends Model
+class TravelSchedule extends Model
 {
     use HasFactory, Uuid;
 
-    protected $table = 'travel';
+    protected $table = 'travel_schedules';
 
     protected $fillable = [
-        'travelTitle',
-        'travelImage',
-        'description',
-        'phoneNumber',
-        'travel_schedules_id',
-        'admins_id'
+        'name'
     ];
 }

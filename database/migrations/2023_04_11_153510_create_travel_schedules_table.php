@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('travel', function (Blueprint $table) {
-            $table->dropColumn(['travelImg-2','travelImg-3']);
-            $table->longText('description')->change();
-            $table->string('travelStatus');
+        Schema::create('travel_schedules', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('travels');
+        Schema::dropIfExists('travel_schedules');
     }
 };

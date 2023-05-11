@@ -10,6 +10,8 @@ class Article extends Model
 {
     use HasFactory, Uuid;
 
+    protected $table = 'articles';
+
     protected $fillable = [
         'articleTitle',
         'articleImage',

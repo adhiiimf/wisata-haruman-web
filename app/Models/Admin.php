@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Traits\Uuid;
 
 class Admin extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Uuid;
 
     protected $fillable = [
         'name',
