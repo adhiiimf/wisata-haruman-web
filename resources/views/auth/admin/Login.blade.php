@@ -22,43 +22,37 @@
         class="flex flex-col justify-center items-center bg-slate-200 rounded-2xl shadow-2xl shadow-violet-900 px-16 py-12">
         @csrf
         <div class="flex items-center">
-            <span class="h-10 w-10 bg-violet-300 rounded-[50%] inline-block "></span>
+            <img src="/assets/logo-color.png" class="h-12 w-auto" alt="" srcset="">
             <div class="ml-2 text-2xl">
-                <div class="">wisata</div>
-                <div class=" font-bold">Haruman</div>
+                <div class="leading-none">wisata</div>
+                <div class="font-bold">Haruman</div>
             </div>
         </div>
 
         {{--  Email Start  --}}
         <div class="mt-3 rounded-xl outline-none bg-slate-300 relative">
-            <i class="fas fa-user-circle absolute top-1/2 left-2 -translate-y-1/2 text-xl text-slate-500"></i>
-            <input type="text" class="form-control w-full py-3 px-10 rounded-xl outline-none bg-slate-300 focus:bg-slate-100 focus:ring-2 focus:ring-slate-700 "
+            <i class="ml-1 fas fa-user-circle absolute top-1/2 left-2 -translate-y-1/2 text-xl text-slate-500"></i>
+            <input type="text" class="ml-1 form-control w-full py-3 px-10 rounded-xl outline-none bg-slate-300 focus:bg-slate-100 focus:ring-2 focus:ring-slate-700 "
             name="email" placeholder="email" required="required">
         </div>
-        @if ($errors->has('email'))
-        <div class="w-full text-xs font-semibold text-red-700">
-            <p>*{{ $errors->first('email') }}</p>
-        </div>
-        @endif
         {{--  Email End  --}}
         
         {{--  Password Start  --}}
         <div class="mt-3 rounded-xl outline-none bg-slate-300 relative">
-            <i class="fa fa-key absolute top-1/2 left-2 -translate-y-1/2 text-xl text-slate-500 "></i>
-            <input type="password" class="form-control w-full py-3 px-10 rounded-xl outline-none bg-slate-300 focus:bg-slate-100 focus:ring-2 focus:ring-slate-700 "
+            <i class="ml-1 fa fa-key absolute top-1/2 left-2 -translate-y-1/2 text-xl text-slate-500 "></i>
+            <input type="password" class="ml-1 form-control w-full py-3 px-10 rounded-xl outline-none bg-slate-300 focus:bg-slate-100 focus:ring-2 focus:ring-slate-700 "
             name="password" placeholder="Password" required="required">
         </div>
-        @if ($errors->has('password'))
-        <div class="w-full text-xs font-semibold text-red-700">
-            <p>*{{ $errors->first('password') }}</p>
-        </div>
-        @endif
         {{--  Password End  --}}
         
         <div class="w-full my-1 text-xs font-semibold text-violet-700 hover:text-violet-500 active:text-violet-900 ">
             <a href="#" class="">lupa kata sandi?</a>
         </div>
-        
+        @if ($errors->has('email'))
+        <div class="text-center w-auto text-xs mt-2 font-semibold text-red-600">
+            <p>*{{ $errors->first('email') }}</p>
+        </div>
+        @endif
         <button type="submit" class="flex py-1 px-3 mt-3 bg-green-500 hover:bg-green-700 active:bg-green-600 text-slate-100 rounded-xl ">
             <a href="/login" class="flex items-center">
                 <div class="h-full items-center p-1">

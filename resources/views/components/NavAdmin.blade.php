@@ -20,7 +20,7 @@
                 </a>
             </li>    
             @endif
-            @if (request()->is('adminProduct'))
+            @if (request()->is('adminProduct') || request()->is('adminCreateProduct') || request()->is('adminViewProduct/*'))
             <li class="flex items-center my-2">
                 <a href="/adminProduct" class="flex items-center text-gray-200 bg-purple-700 hover:bg-purple-700 hover:text-gray-200 w-full p-2 rounded-xl hover:no-underline no-underline">
                     <span class="material-icons">inventory_2</span>

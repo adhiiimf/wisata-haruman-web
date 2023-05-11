@@ -9,11 +9,43 @@ class ProductController extends Controller
 {
     public function show() {
         $admins_id = Auth::user()->first();
-        $product_data = Product::where('admins_id',$admins_id['id'])->get();
-        return $product_data;
-        // return view('pages.admin.article',[
-        //     'product_data' => $product_data
-        // ]);
+        $product_data = Product::where('admins_id',$admins_id['id'])->orderBy('created_at','desc')->get();
+        // return $product_data;
+        return view('pages.admin.product',[
+            'product_data' => $product_data
+        ]);
+    }
+
+    public function showIndex(Request $request) {
+        $admins_id = Auth::user()->first();
+        $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
+        // return $product_data;
+        return view('pages.admin.viewproduct',[
+            'product_data' => $product_data
+        ]);
+    }
+
+    public function isDelete(Request $request) {
+        $admins_id = Auth::user()->first();
+        $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
+        // return $product_data;
+        if (!$product_data) {
+            return redirect('/404');
+        }
+        return view('pages.admin.deleteproduct',[
+            'product_data' => $product_data
+        ]);
+    }
+
+    public function deleteNow(Request $request) {
+        $admins_id = Auth::user()->first();
+        $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
+        if ($product_data->admins_id==$admins_id['id']) {
+            $post = Product::where('id',$request->product_id)->delete();
+            return redirect('/adminProduct');
+        }else {
+            return 'You don\'t have permission to delete this data';
+        }
     }
 
     public function postProduct(Request $request)
@@ -21,7 +53,7 @@ class ProductController extends Controller
         $admins_id = Auth::user()->first();
         $this->validate($request, [
              'productTitle' => 'required',
-             'productImage' => ['required','mimes:png,jpg,jpeg','max:2048'],
+             'productImage' => ['required','mimes:png,jpg,jpeg'],
              'description' => 'required',
              'stocks' => 'required',
              'phoneNumber' => 'required'
@@ -44,8 +76,7 @@ class ProductController extends Controller
                 'admins_id' => $admins_id['id']
         ]);
         
-        echo $post;
-        // log result
-        dd($post->toArray());
+        // dd($post->toArray());
+        return redirect('/adminProduct');
     }
 }
