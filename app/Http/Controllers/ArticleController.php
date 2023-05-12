@@ -23,7 +23,6 @@ class ArticleController extends Controller
              'articleTitle' => 'required',
              'articleImage' => ['required','mimes:png,jpg,jpeg','max:2048'],
              'content' => 'required',
-            //  'admins_id' => 'required'
         ]);
 
         // for each content and images on summarnote editor

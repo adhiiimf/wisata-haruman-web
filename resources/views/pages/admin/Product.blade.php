@@ -25,6 +25,13 @@
                 <span class="font-semibold pr-2">Tambah</span>
             </a>
         </div>
+        @if ($product_data->count()==0)
+            <div class="w-auto flex justify-center items-center mt-5">
+                <p class="text-2xl !font-semibold text-center text-gray-700">Hai {{$admin_name}}, <br>
+                <span class="text-xl">Kamu belum memiliki produk nih, yuk tambah produk mu sekarang juga, selamat berjualan!</span>
+                </p>
+            </div>
+        @endif
         {{-- foreach content --}}
         @php
             $idx = 0;
@@ -42,41 +49,19 @@
                 <div>
                     <img src={{$data->productImage}} class="max-md:w-auto w-56 rounded-2xl" alt="" srcset="">
                 </div>
-                <div class="ml-3">
+                <div class="ml-3 flex flex-col">
                     <h3 class="text-2xl capitalize">{{$data->productTitle}}</h3>
                     <p class=" truncate w-80">{{$data->description}}</p>
-                    <div class="flex items-center my-1">
-                        <div>
-                            <span>Status : </span>
-                        </div>
-                        @switch($data->stocks)
-                            @case(1)
-                                <div class="ml-2 py-1 px-2 rounded-full border-green-600 border-2 ">
-                                    <span class="font-semibold text-green-600">
-                                        Ada
-                                    </span>
-                                </div>
-                                @break
-                            @case(2)
-                                <div class="ml-2 py-1 px-2 rounded-full border-blue-600 border-2 ">
-                                    <span class="font-semibold text-blue-600">
-                                        Pre-Order
-                                    </span>
-                                </div>
-                                @break
-                            @case(3)
-                                <div class="ml-2 py-1 px-2 rounded-full border-red-600 border-2 ">
-                                    <span class="font-semibold text-red-600">
-                                        Habis
-                                    </span>
-                                </div>
-                                @break
-                            @default            
-                        @endswitch
-                    </div>
-                    <div class="my-2">
-                        <span>Kontak : {{$data->phoneNumber}}</span>
-                    </div>
+                    <span>Harga : <b class="text-gray-700">Rp. {{$data->price}}</b></span>
+                    <span>Stok Barang : <b class="text-gray-700">{{$data->stocks}}</b></span>
+                    <span>Status : 
+                    @if ($data->isPreorder==0)
+                        <b class="text-gray-700">Tidak Pre-Order</b>
+                    @else
+                        <b class="text-gray-700">Pre-Order</b> 
+                    @endif
+                    </span>
+                    <span>Kontak : <b class="text-gray-700">{{$data->phoneNumber}}</b></span>
                 </div>
             </div>
             <div>

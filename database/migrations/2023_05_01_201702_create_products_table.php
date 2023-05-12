@@ -17,10 +17,12 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('productTitle');
             $table->string('productImage');
-            $table->string('description');
-            $table->string('stocks');
+            $table->longText('description');
+            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('stocks');
+            $table->boolean('isPreorder');
             $table->string('phoneNumber');
-            $table->unsignedBigInteger('admins_id');
+            $table->string('admins_id');
             $table->foreign('admins_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

@@ -10,12 +10,14 @@ class Travel extends Model
 {
     use HasFactory, Uuid;
 
+    protected $table = 'travels';
+
     protected $fillable = [
         'travelTitle',
-        'travelImg-1',
+        'travelImage',
         'description',
         'phoneNumber',
-        'travelStatus',
+        'travel_schedules_id',
         'admins_id'
     ];
 }
