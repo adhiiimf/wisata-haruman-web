@@ -52,6 +52,7 @@
                 <div class="ml-3 flex flex-col">
                     <h3 class="text-2xl capitalize">{{$data->productTitle}}</h3>
                     <p class=" truncate w-80">{{$data->description}}</p>
+                    <span>Harga : <b class="text-gray-700">Rp. {{$data->price}}</b></span>
                     <span>Stok Barang : <b class="text-gray-700">{{$data->stocks}}</b></span>
                     <span>Status : 
                     @if ($data->isPreorder==0)
