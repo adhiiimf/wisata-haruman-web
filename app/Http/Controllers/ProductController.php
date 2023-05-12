@@ -57,6 +57,7 @@ class ProductController extends Controller
              'productTitle' => 'required',
              'productImage' => ['required','mimes:png,jpg,jpeg'],
              'description' => 'required',
+             'price' => 'required',
              'stocks' => 'required',
              'isPreorder' => 'required',
              'phoneNumber' => 'required'
@@ -73,6 +74,7 @@ class ProductController extends Controller
                 'productTitle' => $request->productTitle,
                 'productImage' => $thumPath,
                 'description' => $request->description,
+                'price' => $request->price,
                 'stocks' => $request->stocks,
                 'isPreorder' => $request->isPreorder,
                 'phoneNumber' => $request->phoneNumber,

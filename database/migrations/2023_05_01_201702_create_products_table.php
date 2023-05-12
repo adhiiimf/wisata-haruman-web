@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('productTitle');
             $table->string('productImage');
             $table->longText('description');
+            $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('stocks');
             $table->boolean('isPreorder');
             $table->string('phoneNumber');

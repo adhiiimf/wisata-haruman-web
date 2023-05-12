@@ -16,6 +16,7 @@ class Product extends Model
         'productTitle',
         'productImage',
         'description',
+        'price',
         'stocks',
         'isPreorder',
         'phoneNumber',
