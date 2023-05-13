@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     // function to login page of admin role
     public function loginpage() {
-        return view('auth.admin.login');
+        return view('auth.admin.Login');
     }
 
     /**

@@ -12,7 +12,7 @@ class TravelController extends Controller
         $travel_data = Travel::where('admins_id',$admins_id['id'])->orderBy('updated_at','desc')->get();
         // return $travel_data;
         $admins_id = explode(' ',$admins_id->name)[0];
-        return view('pages.admin.travel',[
+        return view('pages.admin.Travel',[
             'admin_name' => $admins_id,
             'travel_data' => $travel_data
         ]);

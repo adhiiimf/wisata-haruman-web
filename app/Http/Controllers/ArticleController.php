@@ -11,7 +11,7 @@ class ArticleController extends Controller
         $admins_id = Auth::user()->first();
         $article_data = Article::where('admins_id',$admins_id['id'])->get();
         return $article_data;
-        // return view('pages.admin.article',[
+        // return view('pages.admin.Article',[
         //     'article_data' => $article_data
         // ]);
     }

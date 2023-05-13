@@ -12,7 +12,7 @@ class ProductController extends Controller
         $product_data = Product::where('admins_id',$admins_id['id'])->orderBy('created_at','desc')->get();
         $admins_id = explode(' ',$admins_id->name)[0];
         // return $product_data;
-        return view('pages.admin.product',[
+        return view('pages.admin.Product',[
             'admin_name' => $admins_id,
             'product_data' => $product_data
         ]);
@@ -22,7 +22,7 @@ class ProductController extends Controller
         $admins_id = Auth::user()->first();
         $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
         // return $product_data;
-        return view('pages.admin.viewproduct',[
+        return view('pages.admin.ViewProduct',[
             'product_data' => $product_data
         ]);
     }
@@ -34,7 +34,7 @@ class ProductController extends Controller
         if (!$product_data) {
             return redirect('/404');
         }
-        return view('pages.admin.deleteproduct',[
+        return view('pages.admin.DeleteProduct',[
             'product_data' => $product_data
         ]);
     }
