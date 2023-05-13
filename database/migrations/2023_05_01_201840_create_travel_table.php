@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('phoneNumber');
             $table->string('admins_id');
             $table->foreign('admins_id')->references('id')->on('admins')->onUpdate('cascade')->onDelete('cascade');     
-            $table->string('travel_schedules_id');
-            $table->foreign('travel_schedules_id')->references('id')->on('travel_schedules')->cascadeOnUpdate()->restrictOnDelete();
+            $table->unsignedBigInteger('travels__schedules_id');
+            $table->foreign('travels__schedules_id')->references('id')->on('travels__schedules')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });
     }
