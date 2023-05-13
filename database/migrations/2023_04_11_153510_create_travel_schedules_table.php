@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('travel_schedules', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+        Schema::create('travels__schedules', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
         });
@@ -28,6 +28,7 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('travels');
-        Schema::dropIfExists('travel_schedules');
+        Schema::dropIfExists('travels_schedules');
+        Schema::dropIfExists('travels__schedules');
     }
 };

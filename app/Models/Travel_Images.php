@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TravelSchedule extends Model
+class Travel_Images extends Model
 {
     use HasFactory;
 
-    protected $table = 'travels__schedules';
+    protected $table = 'travels_images';
 
     protected $fillable = [
-        'name'
+        'image_url',
+        'admins_id',
+        'travels_id'
     ];
 }

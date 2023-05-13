@@ -17,7 +17,7 @@ class Travel extends Model
         'travelImage',
         'description',
         'phoneNumber',
-        'travel_schedules_id',
+        'travels__schedules_id',
         'admins_id'
     ];
 }
