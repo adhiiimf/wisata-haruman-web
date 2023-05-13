@@ -32,7 +32,7 @@ Route::middleware(['auth:admins'])->group(function () {
         return view('pages.admin.CreateArticle');
     })->name('pages.admin.CreateArticle');
     
-    Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.Article');
+    Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.article');
     // end of admin article feature
 
     // start of admin product feature
@@ -48,21 +48,21 @@ Route::middleware(['auth:admins'])->group(function () {
 
     Route::post('/adminDelProduct/del/{product_id}',[ProductController::class,'deleteNow'])->name('pages.admin.DeleteProduct.Fix');
 
-    Route::post('post/product',[ProductController::class,'postProduct'])->name('post.Product');
+    Route::post('post/product',[ProductController::class,'postProduct'])->name('post.product');
     // end of product feauture
 
     // start of admin travel feature
     Route::get('/adminTravel', [TravelController::class,'show'])->name('pages.admin.Travel');
 
-    Route::get('/adminCreateTravel', function () {
-        return view('pages.admin.CreateTravel');
-    })->name('pages.admin.CreateTravel');
+    Route::get('/adminCreateTravel', [TravelController::class,'createForm'])->name('pages.admin.CreateTravel');
 
-    Route::post('post/travel',[TravelController::class,'postTravel'])->name('post.Travel');
+    Route::get('/adminViewTravel/{travel_id}',[TravelController::class,'showIndex'])->name('pages.admin.ViewTravel');
+
+    Route::post('post/travel',[TravelController::class,'postTravel'])->name('post.travel');
     // end of travel feauture
 
     // logout routes
-    Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.Logout');
+    Route::get('/logout',[AdminController::class, 'logout'])->name('auth.admin.logout');
 });
 
 Route::middleware(['guest:admins'])->group(function () {
@@ -88,7 +88,7 @@ Route::middleware(['guest:admins'])->group(function () {
 
     // login route
     Route::get('/login',[AdminController::class, 'loginpage'])->name('auth.admin.Login');
-    Route::post('/auth/adminlogin', [AdminController::class, 'authcheck'])->name('auth.admin.Logincheck');
+    Route::post('/auth/adminlogin', [AdminController::class, 'authcheck'])->name('auth.admin.logincheck');
 
     // error 404 pages
     Route::get('/404', function () {
