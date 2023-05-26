@@ -31,47 +31,47 @@
     <!-- Customized Bootstrap Stylesheet -->
     {{--  <link href="css/style.css" rel="stylesheet">  --}}
     <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
 </head>
 
 <body class="font-poppins">
 
     <!-- Navbar Start -->
-    <div class="bg-violet-600 text-slate-100">
-        <div class="flex w-full p-2">
+    <div class=" bg-indigo-700 text-slate-100">
+        <div class="flex w-full p-2 pt-5 justify-between">
             <a href="" class="w-1/5">
                 <div class="flex items-center ml-8">
-                    <span class="h-[35px] w-[35px] bg-violet-300 rounded-[50%] inline-block "></span>
+                    <img class="h-auto w-[35px] inline-block" src="{{asset('assets/logo-white.png')}}" alt="">
                     <div class="ml-2">
-                        <div class="">wisata</div>
+                        <div class="">Wisata</div>
                         <div class=" font-bold">Haruman</div>
                     </div>
                 </div>
             </a>
-            <div class="flex justify-center items-center w-3/5">
-                <a href="/" class="px-3 py-2 mr-1 rounded-lg bg-violet-900">Beranda</a>
-                <a href="/travel" class="px-3 py-2  mr-1 hover:bg-violet-900 rounded-lg">Wisata</a>
-                <a href="/product" class="px-3 py-2 mr-1 hover:bg-violet-900 rounded-lg">Belanja</a>
-                <a href="/article" class="px-3 py-2 hover:bg-violet-900 rounded-lg">Artikel</a>
+            <div class="absolute flex justify-center items-center inset-x-1/2">
+                <a href="/" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-800">Beranda</a>
+                <a href="/travel" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Wisata</a>
+                <a href="/product" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Belanja</a>
+                <a href="/article" class="px-3 py-2 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Artikel</a>
             </div>
-            <a href="" class="flex justify-end items-center w-1/5">
-                <div class="flex mr-8 py-2 px-4 bg-green-600 rounded-lg">
+            <div class="flex mr-8 px-3 items-center bg-gradient-to-tr from-green-500 to-emerald-500 rounded-2xl duration-150 ease-out hover:!scale-105 ">
                     <a href="/login" class="flex items-center">
-                        <div class="h-full items-center p-1">
+                        <div class="items-center mx-1">
                             <i class="fa fa-sign-in-alt"></i>
                         </div>
-                        <div class="h-full p-1">
+                        <div class="mx-1">
                             <div class="">masuk</div>
                         </div>
                     </a>
-                </div>
-            </a>
+            </div>
+            
         </div>
     </div>
     <!-- Navbar End -->
 
     <!-- Welcome Start -->
-    <div class="flex justify-center bg-violet-600 text-slate-100 pt-8 pb-12">
+    <div class="flex justify-center bg-gradient-to-t from-violet-600 to-indigo-700 text-slate-100 pt-8 pb-12">
         <div class="container flex p-2 items-center">
             <div class="w-1/2 flex flex-col 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl">
                 <div>
@@ -96,7 +96,7 @@
             </div>
             <div class="w-1/2">
                 <div class="mb-5 rounded-lg overflow-auto shadow-lg shadow-gray-700">
-                    <img src="assets/destination-7.jpg" alt="">
+                    <img class=" h-auto w-full" src="{{asset('assets/img5.jpg')}}" alt="">
                 </div>
                 <hr class="border-2 border-violet-500">
             </div>
@@ -105,32 +105,75 @@
     <!-- Welcome End -->
 
     <!-- Intro Start -->
-    <div class="flex justify-center bg-violet-700 text-slate-100 p-20">
-        <div class="container flex p-2 items-center">
-            <div class="w-1/2">
-                <div class="mb-5 rounded-lg overflow-auto shadow-lg shadow-gray-700">
-                    <img class="w-full" src="assets/destination-8.jpg" alt="">
+    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 p-20">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide !flex !justify-center">
+                <div class="container flex p-2 items-center">
+                    <div class="w-1/2">
+                        <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
+                            <img class="w-full" src="{{asset('assets/img1.jpg')}}" alt="">
+                        </div>
+                        <hr class="border-2 border-violet-500">
+                    </div>
+                    <div class="w-1/2 flex flex-col m-24">
+                        <div class="mb-2">
+                            <h1 class="text-5xl">Apa itu <br><span class="font-bold">Desa Haruman?</span></h1>
+                            <hr class="w-1/4 mt-2 border-2 border-violet-500">
+                            <br>
+                            <p class="text-xl text-gray-300">
+                                Hai Semua, yuk tonton video berikut untuk mengetahui apa itu desa haruman dan kenapa kamu harus berkunjung kesini.
+                            </p>
+                        </div>
+                        <a class="flex item-center" href="https://www.youtube.com/watch?v=hMHOxXZvsnI&t=81s" target="_blank">
+                            <div class="rounded-full py-2 px-4 bg-gradient-to-tr from-red-200 to-red-100 shadow-2xl flex items-center hover:scale-105 duration-150 ease-linear">
+                                <img class="w-7 filter" src="{{asset('assets/youtube.svg')}}" alt="" srcset="">
+                                <span class="ml-2 text-red-600 font-semibold">
+                                    Tonton Video
+                                </span>
+                                
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <hr class="border-2 border-violet-500">
-            </div>
-            <div class="w-1/2 flex flex-col m-24">
-                <div>
-                    <h1 class="text-5xl">Apa itu <span class="font-bold">Desa Haruman?</span></h1>
-                    <hr class="w-1/4 mt-5 border-2 border-violet-500">
-                    <br>
-                    <p class="text-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, natus,
-                        doloremque ut dolore consectetur aliquam praesentium vel illo accusantium molestias,
-                        enim voluptatem rerum aut asperiores commodi! Harum numquam corporis at?
-                    </p>
+              </div>
+              <div class="swiper-slide !flex !justify-center">
+                <div class="container flex p-2 items-center">
+                    <div class="w-1/2">
+                        <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
+                            <img class="w-full" src="{{asset('assets/coffeeroaster.jpg')}}" alt="">
+                        </div>
+                        <hr class="border-2 border-violet-500">
+                    </div>
+                    <div class="w-1/2 flex flex-col m-24">
+                        <div class="mb-2">
+                            <h1 class="text-5xl">Inovasi untuk<br><span class="font-bold">Desa Haruman</span></h1>
+                            <hr class="w-1/4 mt-2 border-2 border-violet-500">
+                            <br>
+                            <p class="text-xl text-gray-300">
+                                Salah satu produk unggulan desa haruman yaitu biji kopi arabica. Oleh karena itu Telkom University berinovasi dengan alat roasting kopi semi otomatis untuk membantu petani kopi.
+                            </p>
+                        </div>
+                        <a class="flex item-center" href="https://youtu.be/jIabTYFgUJo" target="_blank">
+                            <div class="rounded-full py-2 px-4 bg-gradient-to-tr from-red-200 to-red-100 shadow-2xl flex items-center hover:scale-105 duration-150 ease-linear">
+                                <img class="w-7 filter" src="{{asset('assets/youtube.svg')}}" alt="" srcset="">
+                                <span class="ml-2 text-red-600 font-semibold">
+                                    Tonton Video
+                                </span>
+                                
+                            </div>
+                        </a>
+                    </div>
                 </div>
+              </div>
             </div>
+            <div class="swiper-pagination ![--swiper-theme-color: #e5e5e5]"></div>
         </div>
     </div>
     <!-- Intro End -->
 
     <!-- Destination Start -->
-    <div class="flex justify-center bg-violet-800 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-violet-700 to-indigo-600 text-slate-100 p-20">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
                 <h1 class="text-5xl">Destinasi <span class="font-bold">Haruman</span></h1>
@@ -330,7 +373,7 @@
         </div>
     </div>
     <hr class="w-full border-2 border-violet-500">
-    <div class="flex justify-center p-5 text-lg bg-purple-300 text-slate-700 hover:text-slate-900">
+    <div class="flex justify-center p-5 text-[15px] text-center bg-purple-300 text-slate-700 hover:text-slate-900">
         <div class="container cursor-default">
             ©Wisata Haruman 2023
         </div>
@@ -372,7 +415,7 @@
         }
     </style>
 
-    {{--  <script src="js/app.js"></script>  --}}
+     <script src="js/app.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script>
         var destination_glide = new Glide('.destinasi_glide', {
@@ -411,6 +454,21 @@
         }).addTo(map);
         var marker = L.marker([-7.072505262549012, 107.94232816547856]).addTo(map);
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+  });
+
+</script>
 </body>
 
 </html>
