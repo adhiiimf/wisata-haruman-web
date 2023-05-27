@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Wisata Harumann</title>
+    <title>Wisata Haruman</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    {{--  Glide.js  --}}
+    
     <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -71,7 +71,7 @@
     <!-- Navbar End -->
 
     <!-- Welcome Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-600 to-indigo-700 text-slate-100 pt-8 pb-12">
+    <div class="flex justify-center bg-gradient-to-t from-violet-600 to-indigo-700 text-slate-100 px-8 pt-8 pb-12">
         <div class="container flex p-2 items-center">
             <div class="w-1/2 flex flex-col 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl">
                 <div>
@@ -109,14 +109,14 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 items-center">
+                <div class="container flex p-2 items-start">
                     <div class="w-1/2">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/img1.jpg')}}" alt="">
                         </div>
                         <hr class="border-2 border-violet-500">
                     </div>
-                    <div class="w-1/2 flex flex-col m-24">
+                    <div class="w-1/2 flex flex-col mt-8 mx-24">
                         <div class="mb-2">
                             <h1 class="text-5xl">Apa itu <br><span class="font-bold">Desa Haruman?</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
@@ -138,14 +138,14 @@
                 </div>
               </div>
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 items-center">
+                <div class="container flex p-2 items-start">
                     <div class="w-1/2">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/coffeeroaster.jpg')}}" alt="">
                         </div>
                         <hr class="border-2 border-violet-500">
                     </div>
-                    <div class="w-1/2 flex flex-col m-24">
+                    <div class="w-1/2 flex flex-col mt-8 mx-24">
                         <div class="mb-2">
                             <h1 class="text-5xl">Inovasi untuk<br><span class="font-bold">Desa Haruman</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
@@ -221,7 +221,7 @@
     <!-- Destination End -->
 
     <!-- Belanja Start -->
-    <div class="flex justify-center bg-violet-200 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-violet-200 to-indigo-200 text-slate-100 p-20">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
                 <h1 class="text-5xl text-slate-900">Belanja <span class="font-bold">Haruman</span></h1>
@@ -271,7 +271,7 @@
     <!-- Belanja End -->
 
     <!-- Artikel Start -->
-    <div class="flex justify-center bg-purple-200 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-cyan-100 to-violet-200 text-slate-100 p-20">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
                 <h1 class="text-5xl text-slate-900">Artikel <span class="font-bold">Haruman</span></h1>
@@ -319,7 +319,7 @@
     <!-- Artikel End -->
 
     <!-- Footer Start -->
-    <div class="flex justify-center bg-purple-300 text-slate-900 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-violet-300 to-cyan-100 text-slate-900 p-20">
         <div class="container p-2 flex">
             <div class="w-1/2">
                 <div class="w-1/2 mb-10">
@@ -372,8 +372,8 @@
             </div>
         </div>
     </div>
-    <hr class="w-full border-2 border-violet-500">
-    <div class="flex justify-center p-5 text-[15px] text-center bg-purple-300 text-slate-700 hover:text-slate-900">
+    <hr class="w-full border-2 border-violet-400">
+    <div class="flex justify-center p-5 text-[15px] text-center bg-violet-300 text-slate-700 hover:text-slate-900">
         <div class="container cursor-default">
             ©Wisata Haruman 2023
         </div>
@@ -461,6 +461,9 @@
 <script>
   var swiper = new Swiper(".mySwiper", {
     loop: true,
+    // autoplay: {
+    //     delay: 3000,
+    // },
     spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
