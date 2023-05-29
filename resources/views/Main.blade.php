@@ -111,7 +111,7 @@
                 <img class="w-auto my-3" src="{{asset('assets/warjabaktiqrcode.png')}}" alt="">
                 <span class=" mt-5">Lokasi <b>Warjabakti</b></span>
             </div>
-            <img class="w-[800px] h-auto rounded-3xl shadow-2xl" src="{{asset('assets/haruman_map.png')}}" alt="haruman map">
+            <img class=" w-4/5 h-auto rounded-3xl shadow-2xl" src="{{asset('assets/haruman_map.png')}}" alt="haruman map">
         </div>
     </div>
     <!-- Intro Start -->
