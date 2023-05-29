@@ -45,9 +45,9 @@
         </div>
         {{--  Password End  --}}
         
-        <div class="w-full my-1 text-xs font-semibold text-violet-700 hover:text-violet-500 active:text-violet-900 ">
+        <!-- <div class="w-full my-1 text-xs font-semibold text-violet-700 hover:text-violet-500 active:text-violet-900 ">
             <a href="#" class="">lupa kata sandi?</a>
-        </div>
+        </div> -->
         @if ($errors->has('email'))
         <div class="text-center w-auto text-xs mt-2 font-semibold text-red-600">
             <p>*{{ $errors->first('email') }}</p>
@@ -65,8 +65,7 @@
         </button>
 
         <div class="mt-3 text-xs font-semibold">
-            <span class="text-slate-900">tidak punya akun? <a href="/signup" class="text-violet-700 hover:text-violet-500 active:text-violet-900 ">buat di
-                    sini</a></span>
+            <span class="text-slate-900">*Untuk saat ini hanya untuk admin</span>
         </div>
     </form>
 </body>
