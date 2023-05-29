@@ -105,11 +105,11 @@
     <!-- Welcome End -->
 
     <!-- Intro Start -->
-    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 p-20">
-        <div class="swiper mySwiper">
+    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 py-20 px-10">
+        <div class="swiper videoSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 items-start">
+                <div class="container flex p-2 pb-20 items-center">
                     <div class="w-1/2">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/img1.jpg')}}" alt="">
@@ -118,7 +118,7 @@
                     </div>
                     <div class="w-1/2 flex flex-col mt-8 mx-24">
                         <div class="mb-2">
-                            <h1 class="text-5xl">Apa itu <br><span class="font-bold">Desa Haruman?</span></h1>
+                            <h1 class="text-3xl">Apa itu <br><span class="font-bold">Desa Haruman?</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
                             <br>
                             <p class="text-xl text-gray-300">
@@ -138,7 +138,7 @@
                 </div>
               </div>
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 items-start">
+                <div class="container flex p-2 pb-20 items-center">
                     <div class="w-1/2">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/coffeeroaster.jpg')}}" alt="">
@@ -147,7 +147,7 @@
                     </div>
                     <div class="w-1/2 flex flex-col mt-8 mx-24">
                         <div class="mb-2">
-                            <h1 class="text-5xl">Inovasi untuk<br><span class="font-bold">Desa Haruman</span></h1>
+                            <h1 class="text-3xl">Inovasi untuk<br><span class="font-bold">Desa Haruman</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
                             <br>
                             <p class="text-xl text-gray-300">
@@ -179,42 +179,46 @@
                 <h1 class="text-5xl">Destinasi <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="destinasi_glide">
-                <div class="glide__track relative mb-3" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Air Terjun
+            <div class="swiper travelSwiper">
+                <div class="swiper-wrapper pb-20">
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/img5.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Langit Parabon
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Milky Way
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/destinasijeruk-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Petik Jeruk
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Petik Kebun
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/jelajahkebun-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Jelajah Kebun
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Lainnya
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/petiktomat-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Petik Tomat
+                                </span>
                             </div>
-                        </li>
-                    </ul>
-                    <div class="glide__arrows w-full absolute top-1/2 -translate-y-1/2 z-20 flex justify-between"
-                        data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left ml-6" data-glide-dir="<"><i
-                                class="fas fa-chevron-circle-left text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
-                        <button class="glide__arrow glide__arrow--right mr-6" data-glide-dir=">"><i
-                                class="fas fa-chevron-circle-right text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
+                        </a>
                     </div>
                 </div>
-                <div class="glide__bullets" data-glide-el="controls[nav]">
-                    <button class="glide__bullet" data-glide-dir="=0"></button>
-                    <button class="glide__bullet" data-glide-dir="=1"></button>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -227,44 +231,46 @@
                 <h1 class="text-5xl text-slate-900">Belanja <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="belanja_glide">
-                <div class="glide__track relative mb-3" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Kopi Arabika
+            <div class="swiper productSwiper">
+                <div class="swiper-wrapper pb-20">
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/daunbawang-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Daun Bawang
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Jeruk Sunkist
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/cabe-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Cabai Merah
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Wortel
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/bijikopi-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Biji Kopi Arabica
+                                </span>
                             </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="flex justify-center items-center text-4xl w-full h-64 rounded-xl bg-slate-400">
-                                Lainnya
+                        </a>
+                    </div>
+                    <div class="swiper-slide !flex !justify-center">
+                        <a href="">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/jeruk-min.jpg')}}')">
+                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                    Jeruk
+                                </span>
                             </div>
-                        </li>
-                    </ul>
-                    <div class="glide__arrows w-full absolute top-1/2 -translate-y-1/2 z-20 flex justify-between"
-                        data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left ml-6" data-glide-dir="<"><i
-                                class="fas fa-chevron-circle-left text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
-                        <button class="glide__arrow glide__arrow--right mr-6" data-glide-dir=">"><i
-                                class="fas fa-chevron-circle-right text-3xl opacity-75 hover:text-white hover:opacity-100 transition-all duration-500"></i></button>
+                        </a>
                     </div>
                 </div>
-                <div class="glide__bullets belanja_glide" data-glide-el="controls[nav]">
-                    <button class="glide__bullet !bg-purple-400 hover:!bg-purple-600 hover:!border-purple-600"
-                        data-glide-dir="=0"></button>
-                    <button class="glide__bullet !bg-purple-400 hover:!bg-purple-600 hover:!border-purple-600"
-                        data-glide-dir="=1"></button>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -278,38 +284,17 @@
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
             <div class="grid grid-cols-2 gap-8 mx-32 mt-12">
-                <div
-                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
-                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
+                @for ($i = 0; $i < 4; $i++)
+                <a href="">
+                    <div
+                    class="flex justify-center relative items-center h-full text-xl rounded-xl bg-slate-400 overflow-hidden duration-100 ease-linear hover:scale-105">
+                    <img src="{{asset('assets/jeruk-min.jpg')}}" alt="" class="object-cover brightness-50">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
-                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
+                        <p class="m-5 text-start">Cara menanam bibit buah jeruk yang baik dan benar</p>
                     </div>
-                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
                 </div>
-                <div
-                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
-                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
-                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
-                    </div>
-                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
-                </div>
-                <div
-                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
-                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
-                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
-                    </div>
-                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
-                </div>
-                <div
-                    class="flex justify-center relative items-center h-full text-4xl rounded-xl bg-slate-400 overflow-hidden">
-                    <img src="assets/garden-1.jpeg" alt="" class="object-cover brightness-50">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
-                        <p class="m-5 text-center">Cara menanam bibit buah jeruk yang baik dan benar</p>
-                    </div>
-                    <a href="#" class="absolute right-8 bottom-8 underline text-lg">Baca Artikel</a>
-                </div>
+                </a>
+                @endfor
             </div>
             <div class="flex float-right underline text-slate-900 mx-32 mt-3">
                 <a href="" class="text-2xl font-semibold">Artikel lainnya..</a>
@@ -323,7 +308,7 @@
         <div class="container p-2 flex">
             <div class="w-1/2">
                 <div class="w-1/2 mb-10">
-                    <h1 class="text-4xl">wisata <span class="font-bold">Haruman</span></h1>
+                    <h1 class="text-2xl">wisata <span class="font-bold">Haruman</span></h1>
                     <hr class="w-full mt-1 border-2 border-violet-500">
                     <div class="text-xl">
                         <div class="flex items-center">
@@ -331,21 +316,21 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="h-full w-full p-1">
-                                <div class="">helpdesk@wisataharuman.com</div>
+                                <div class="text-lg">qna@wisataharuman.com</div>
                             </div>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-start">
                             <div class="flex justify-center h-full w-1/12 items-center p-1">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="h-full w-full p-1">
-                                <div class="">Mekarsari, Kec.Cimaung, Kabupaten Bandung, Jawa Barat</div>
+                                <div class="text-lg">Mekarsari, Kec.Cimaung, Kabupaten Bandung, Jawa Barat</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="w-1/2 mb-10">
-                    <h1 class="text-4xl">explore <span class="font-bold">Us!</span></h1>
+                    <h1 class="text-2xl">explore <span class="font-bold">Us!</span></h1>
                     <hr class="w-full mt-1 border-2 border-violet-500">
                     <div class="text-xl">
                         <div class="flex items-center">
@@ -353,7 +338,7 @@
                                 <i class="fas fa-compass"></i>
                             </div>
                             <div class="h-full w-full p-1">
-                                <div class="">Destinasi Wisata</div>
+                                <div class="text-lg">Destinasi Wisata</div>
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -361,7 +346,7 @@
                                 <i class="fa fa-shopping-cart"></i>
                             </div>
                             <div class="h-full w-full p-1">
-                                <div class="">Belanja</div>
+                                <div class="text-lg">Belanja</div>
                             </div>
                         </div>
                     </div>
@@ -380,73 +365,9 @@
     </div>
     <!-- Footer End -->
 
-    <style>
-        .glide__bullets {
-            bottom: 2em;
-            display: inline-flex;
-            list-style: none;
-        }
-
-        .glide__bullet {
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 20px;
-            height: 20px;
-            padding: 0;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            transition: all 300ms ease-in-out;
-            cursor: pointer;
-            line-height: 0;
-            box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-            margin: 0 0.25em;
-        }
-
-        .glide__bullet:hover {
-            border: 2px solid white;
-        }
-
-        .glide__bullet--active {
-            background-color: white;
-        }
-
-        .belanja_glide>.glide__bullet--active {
-            --tw-bg-opacity: 1 !important;
-            background-color: rgb(147 51 234 / var(--tw-bg-opacity)) !important;
-        }
-    </style>
-
-     <script src="js/app.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+     <script src="js/app.js"></script>
     <script>
-        var destination_glide = new Glide('.destinasi_glide', {
-            type: 'slider',
-            bound: true,
-            startAt: 0,
-            perView: 3,
-            gap: 50,
-            peek: {
-                before: 0,
-                after: 200
-            }
-        })
-
-        var belanja_glide = new Glide('.belanja_glide', {
-            type: 'slider',
-            bound: true,
-            startAt: 0,
-            perView: 3,
-            gap: 50,
-            peek: {
-                before: 0,
-                after: 200
-            }
-        })
-
-        destination_glide.mount()
-        belanja_glide.mount()
-
         {{--  Map Js  --}}
-
         var map = L.map('map').setView([-7.072505262549012, 107.94232816547856], 13);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -459,17 +380,33 @@
 
 <!-- Initialize Swiper -->
 <script>
-  var swiper = new Swiper(".mySwiper", {
+  var swiper = new Swiper(".videoSwiper", {
     loop: true,
-    // autoplay: {
-    //     delay: 3000,
-    // },
+    autoplay: {
+        delay: 4000,
+    },
     spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
   });
+  var swiper1 = new Swiper(".travelSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    var swiper2 = new Swiper(".productSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
 
 </script>
 </body>
