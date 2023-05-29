@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Wisata Haruman</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="Wisata Haruman, Travelling, Nature" name="keywords">
+    <meta content="Wisata Haruman Warjabakti" name="description">
 
     <!-- Favicon -->
     <link href="assets/favicon.ico" rel="icon">
@@ -100,7 +100,20 @@
         </div>
     </div>
     <!-- Welcome End -->
-
+    <div class="flex flex-col bg-gradient-to-t from-violet-600 via-indigo-600 to-violet-600 text-slate-100 py-20 px-20">
+        <div class="w-1/2 mb-10">
+            <h1 class="text-5xl">Denah Peta <span class="font-bold">Haruman</span></h1>
+            <hr class="w-1/4 mt-5 border-2 border-violet-500">
+        </div>
+        <div class="flex justify-center items-start">
+            <div class="mr-8 text-center mt-3">
+                <span class="mb-2 mt-4 text-lg">Scan QR Code Berikut</span>
+                <img class="w-auto my-3" src="{{asset('assets/warjabaktiqrcode.png')}}" alt="">
+                <span class=" mt-5">Lokasi <b>Warjabakti</b></span>
+            </div>
+            <img class="w-[800px] h-auto rounded-3xl shadow-2xl" src="{{asset('assets/haruman_map.png')}}" alt="haruman map">
+        </div>
+    </div>
     <!-- Intro Start -->
     <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 py-20 px-10">
         <div class="swiper videoSwiper">
