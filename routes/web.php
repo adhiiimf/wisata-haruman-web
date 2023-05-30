@@ -7,7 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TravelController;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,9 +67,7 @@ Route::middleware(['auth:admins'])->group(function () {
 
 Route::middleware(['guest:admins'])->group(function () {
     // landing page route
-    Route::get('/', function () {
-        return view('Main');
-    })->name('lp');
+    Route::get('/',[MainController::class, 'landingpage'])->name('lp');
 
     // travel page
     Route::get('/travel', function () {
