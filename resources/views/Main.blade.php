@@ -10,7 +10,7 @@
 
     <!-- Favicon -->
     <link href="assets/favicon.ico" rel="icon">
-
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,18 +27,17 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     {{--  <link href="css/style.css" rel="stylesheet">  --}}
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
 </head>
 
 <body class="font-poppins">
-
+    
     <!-- Navbar Start -->
     <div class=" bg-indigo-700 text-slate-100">
-        <div class="flex w-full p-2 pt-5 justify-between">
+        <div class="flex w-full p-2 pt-5 max-sm:px-0 justify-between">
             <a href="" class="w-1/5">
-                <div class="flex items-center ml-8">
+                <div class="flex items-center ml-8 max-sm:ml-4">
                     <img class="h-auto w-[35px] inline-block" src="{{asset('assets/logo-white.png')}}" alt="">
                     <div class="ml-2">
                         <div class="">Wisata</div>
@@ -46,13 +45,13 @@
                     </div>
                 </div>
             </a>
-            <div class="absolute flex justify-center items-center inset-x-1/2">
+            <div class="absolute flex justify-center items-center inset-x-1/2 max-[800px]:hidden">
                 <a href="/" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-800">Beranda</a>
                 <a href="/travel" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Wisata</a>
                 <a href="/product" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Belanja</a>
                 <a href="/article" class="px-3 py-2 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Artikel</a>
             </div>
-            <div class="flex mr-8 px-3 items-center bg-gradient-to-tr from-green-500 to-emerald-500 rounded-2xl duration-150 ease-out hover:!scale-105 ">
+            <div class="flex mr-8 max-sm:mr-4 px-3 items-center bg-gradient-to-tr from-green-500 to-emerald-500 rounded-2xl duration-150 ease-out hover:!scale-105 ">
                     <a href="/login" class="flex items-center">
                         <div class="items-center mx-1">
                             <i class="fa fa-sign-in-alt"></i>
@@ -68,9 +67,9 @@
     <!-- Navbar End -->
 
     <!-- Welcome Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-600 to-indigo-700 text-slate-100 px-8 pt-8 pb-12">
-        <div class="container flex p-2 items-center">
-            <div class="w-1/2 flex flex-col 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl">
+    <div class="flex justify-center bg-gradient-to-t from-violet-600 to-indigo-700 text-slate-100 px-8 pt-8 pb-8 max-sm:px-4">
+        <div class="container flex p-2 items-center max-sm:flex max-sm:flex-col-reverse">
+            <div class="w-1/2 max-sm:mt-4 max-sm:w-full flex flex-col 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl max-sm:text-2xl">
                 <div>
                     <span class="leading-tight">
                         Jelajahi Keindahan
@@ -91,7 +90,7 @@
                     </div>
                 </a>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 max-sm:w-full">
                 <div class="mb-5 rounded-lg overflow-auto shadow-lg shadow-gray-700">
                     <img class=" h-auto w-full" src="{{asset('assets/img5.jpg')}}" alt="">
                 </div>
@@ -100,33 +99,33 @@
         </div>
     </div>
     <!-- Welcome End -->
-    <div class="flex flex-col bg-gradient-to-t from-violet-600 via-indigo-600 to-violet-600 text-slate-100 py-20 px-20">
-        <div class="w-1/2 mb-10">
-            <h1 class="text-5xl">Denah Peta <span class="font-bold">Haruman</span></h1>
+    <div class="flex flex-col bg-gradient-to-t from-violet-600 via-indigo-600 to-violet-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-6">
+        <div class="w-1/2 max-sm:w-full mb-10">
+            <h1 class="text-5xl max-[800px]:text-3xl">Denah Peta <span class="font-bold">Haruman</span></h1>
             <hr class="w-1/4 mt-5 border-2 border-violet-500">
         </div>
-        <div class="flex justify-center items-start">
-            <div class="mr-8 text-center mt-3">
+        <div class="flex justify-center items-start max-[800px]:items-center max-[800px]:flex max-[800px]:flex-col-reverse">
+            <div class="mr-8 max-[800px]:mr-0 text-center mt-3 max-[800px]:mt-10 flex justify-center items-center flex-col">
                 <span class="mb-2 mt-4 text-lg">Scan QR Code Berikut</span>
-                <img class="w-auto my-3" src="{{asset('assets/warjabaktiqrcode.png')}}" alt="">
-                <span class=" mt-5">Lokasi <b>Warjabakti</b></span>
+                <img class="w-auto max-sm:w-24 max-[800px]:w-52 my-3 max-sm:my-1" src="{{asset('assets/warjabaktiqrcode.png')}}" alt="">
+                <span class=" mt-5 max-sm:mt-2">Lokasi <b>Warjabakti</b></span>
             </div>
-            <img class=" w-4/5 h-auto rounded-3xl shadow-2xl" src="{{asset('assets/haruman_map.png')}}" alt="haruman map">
+            <img class="w-4/5 h-auto rounded-3xl shadow-2xl max-[800px]:w-auto" src="{{asset('assets/haruman_map.png')}}" alt="haruman map">
         </div>
     </div>
     <!-- Intro Start -->
-    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 py-20 px-10">
+    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-6">
         <div class="swiper videoSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 pb-20 items-center">
-                    <div class="w-1/2">
+                <div class="container flex p-2 pb-20 items-center max-[800px]:flex max-[800px]:flex-col">
+                    <div class="w-1/2 max-[800px]:w-3/4 max-sm:w-full">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/img1.jpg')}}" alt="">
                         </div>
                         <hr class="border-2 border-violet-500">
                     </div>
-                    <div class="w-1/2 flex flex-col mt-8 mx-24">
+                    <div class="w-1/2 flex flex-col mt-8 mx-24 max-[800px]:mx-4 max-[800px]:w-3/4  max-sm:w-full">
                         <div class="mb-2">
                             <h1 class="text-3xl">Apa itu <br><span class="font-bold">Desa Haruman?</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
@@ -148,14 +147,14 @@
                 </div>
               </div>
               <div class="swiper-slide !flex !justify-center">
-                <div class="container flex p-2 pb-20 items-center">
-                    <div class="w-1/2">
+                <div class="container flex p-2 pb-20 items-center max-[800px]:flex max-[800px]:flex-col">
+                    <div class="w-1/2 max-[800px]:w-3/4">
                         <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
                             <img class="w-full" src="{{asset('assets/coffeeroaster.jpg')}}" alt="">
                         </div>
                         <hr class="border-2 border-violet-500">
                     </div>
-                    <div class="w-1/2 flex flex-col mt-8 mx-24">
+                    <div class="w-1/2 flex flex-col mt-8 mx-24 max-[800px]:mx-4 max-[800px]:w-3/4">
                         <div class="mb-2">
                             <h1 class="text-3xl">Inovasi untuk<br><span class="font-bold">Desa Haruman</span></h1>
                             <hr class="w-1/4 mt-2 border-2 border-violet-500">
@@ -183,17 +182,17 @@
     <!-- Intro End -->
 
     <!-- Destination Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-700 to-indigo-600 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-violet-700 to-indigo-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
-                <h1 class="text-5xl">Destinasi <span class="font-bold">Haruman</span></h1>
+                <h1 class="text-5xl max-[800px]:text-3xl">Destinasi <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
             <div class="swiper travelSwiper">
                 <div class="swiper-wrapper pb-20">
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/img5.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/img5.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Langit Parabon
                                 </span>
@@ -202,7 +201,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/destinasijeruk-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/destinasijeruk-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Petik Jeruk
                                 </span>
@@ -211,7 +210,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/jelajahkebun-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/jelajahkebun-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Jelajah Kebun
                                 </span>
@@ -220,7 +219,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/petiktomat-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/petiktomat-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Petik Tomat
                                 </span>
@@ -235,17 +234,17 @@
     <!-- Destination End -->
 
     <!-- Belanja Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-200 to-indigo-200 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-violet-200 to-indigo-200 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
-                <h1 class="text-5xl text-slate-900">Belanja <span class="font-bold">Haruman</span></h1>
+                <h1 class="text-5xl max-[800px]:text-3xl text-slate-900">Belanja <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
             <div class="swiper productSwiper">
                 <div class="swiper-wrapper pb-20">
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/daunbawang-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/daunbawang-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Daun Bawang
                                 </span>
@@ -254,7 +253,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/cabe-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/cabe-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Cabai Merah
                                 </span>
@@ -263,7 +262,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/bijikopi-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/bijikopi-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Biji Kopi Arabica
                                 </span>
@@ -272,7 +271,7 @@
                     </div>
                     <div class="swiper-slide !flex !justify-center">
                         <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90" style="background-image: url('{{asset('assets/jeruk-min.jpg')}}')">
+                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/jeruk-min.jpg')}}')">
                                 <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                     Jeruk
                                 </span>
@@ -287,13 +286,13 @@
     <!-- Belanja End -->
 
     <!-- Artikel Start -->
-    <div class="flex justify-center bg-gradient-to-t from-cyan-100 to-violet-200 text-slate-100 p-20">
+    <div class="flex justify-center bg-gradient-to-t from-cyan-100 to-violet-200 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
-                <h1 class="text-5xl text-slate-900">Artikel <span class="font-bold">Haruman</span></h1>
+                <h1 class="text-5xl max-[800px]:text-3xl text-slate-900">Artikel <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="grid grid-cols-2 gap-8 mx-32 mt-12">
+            <div class="grid grid-cols-2 gap-8 mx-32 max-lg:mx-10 max-[800px]:mx-14 max-[800px]:grid-cols-1 mt-12 max-sm:mx-0">
                 @for ($i = 0; $i < 4; $i++)
                 <a href="">
                     <div
@@ -306,18 +305,18 @@
                 </a>
                 @endfor
             </div>
-            <div class="flex float-right underline text-slate-900 mx-32 mt-3">
-                <a href="" class="text-2xl font-semibold">Artikel lainnya..</a>
+            <div class="flex float-right underline text-slate-900 mx-32 max-[800px]:mx-0 mt-3">
+                <a href="" class="text-xl font-semibold">Artikel lainnya..</a>
             </div>
         </div>
     </div>
     <!-- Artikel End -->
 
     <!-- Footer Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-300 to-cyan-100 text-slate-900 p-20">
-        <div class="container p-2 flex">
-            <div class="w-1/2">
-                <div class="w-1/2 mb-10">
+    <div class="flex justify-center bg-gradient-to-t from-violet-300 to-cyan-100 text-slate-900 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
+        <div class="container p-2 flex flex-row max-[800px]:flex max-[800px]:flex-col">
+            <div class="w-1/2 max-[800px]:w-auto">
+                <div class="w-1/2 max-[800px]:w-auto mb-10">
                     <h1 class="text-2xl">wisata <span class="font-bold">Haruman</span></h1>
                     <hr class="w-full mt-1 border-2 border-violet-500">
                     <div class="text-xl">
@@ -339,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2 mb-10">
+                <div class="w-1/2 max-[800px]:w-auto mb-10">
                     <h1 class="text-2xl">explore <span class="font-bold">Us!</span></h1>
                     <hr class="w-full mt-1 border-2 border-violet-500">
                     <div class="text-xl">
@@ -362,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <div class="h-full w-1/2 rounded-2xl overflow-hidden shadow-2xl shadow-slate-800">
+            <div class="h-auto w-1/2 max-[800px]:hidden rounded-2xl overflow-hidden shadow-2xl shadow-slate-800">
                 <div id="map" class="h-full w-full"></div>
             </div>
         </div>
@@ -375,21 +374,17 @@
     </div>
     <!-- Footer End -->
 
-     <script src="js/app.js"></script>
-    <script>
-        {{--  Map Js  --}}
-        var map = L.map('map').setView([-7.072505262549012, 107.94232816547856], 13);
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var map = L.map('map').setView([-7.072505262549012, 107.94232816547856], 13);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
         var marker = L.marker([-7.072505262549012, 107.94232816547856]).addTo(map);
-    </script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
   var swiper = new Swiper(".videoSwiper", {
     loop: true,
     autoplay: {
@@ -402,20 +397,40 @@
       },
   });
   var swiper1 = new Swiper(".travelSwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+        effect: "coverflow",
+        slidesPerView: 3,
+        spaceBetween: 40,
+        autoplay: true,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
     });
     var swiper2 = new Swiper(".productSwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+        effect: "coverflow",
+        slidesPerView: 3,
+        spaceBetween: 40,
+        autoplay: true,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
     });
 
 </script>
