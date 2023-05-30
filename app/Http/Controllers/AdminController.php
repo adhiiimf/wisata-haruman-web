@@ -56,7 +56,7 @@ class AdminController extends Controller
         $product_total = Product::where('admins_id',$admins_id['id'])->count();
         $travel_total = Travel::where('admins_id',$admins_id['id'])->count();
         $article_total = Article::where('admins_id',$admins_id['id'])->count();
-        return view('pages.admin.dashboard',[
+        return view('pages.admin.Dashboard',[
             'name'=>$admins_id['name'],
             'productTotal'=>$product_total,
             'travelTotal'=>$travel_total,
