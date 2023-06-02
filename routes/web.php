@@ -73,11 +73,13 @@ Route::middleware(['guest:admins'])->group(function () {
     Route::get('/travel', function () {
         return view('pages.guest.Travel');
     })->name('pages.guest.Travel');
+    
+    Route::get('/travel/{travel_id}',[TravelController::class,'guestShowPage'])->name('pages.guest.ViewTravel');
 
     // product page
-    Route::get('/product', function () {
-        return view('pages.guest.Product');
-    })->name('pages.guest.Product');
+    Route::get('/product',[ProductController::class,'guestShowAll'])->name('pages.guest.Product');
+
+    Route::get('/product/{product_id}',[ProductController::class,'guestShowPage'])->name('pages.guest.ViewProduct');
 
     // article page
     Route::get('/article', function () {
