@@ -27,6 +27,22 @@ class ProductController extends Controller
         ]);
     }
 
+    public function guestShowAll(Request $request) {
+        $product_data = Product::orderBy('created_at','desc')->get();
+        // return $product_data;
+        return view('pages.guest.Product',[
+            'product_data' => $product_data
+        ]);
+    }
+
+    public function guestShowPage(Request $request) {
+        $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
+        // return $product_data;
+        return view('pages.guest.ViewProduct',[
+            'product_data' => $product_data
+        ]);
+    }
+
     public function isDelete(Request $request) {
         $admins_id = Auth::user()->first();
         $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
