@@ -217,7 +217,7 @@
                 <div class="swiper-wrapper pb-20">
                     @foreach ($product_data as $product)
                         <div class="swiper-slide !flex !justify-center">
-                            <a href="">
+                            <a href="/product/{{$product->id}}">
                                 <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{$product->productImage}}')">
                                     <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
                                         {{$product->productTitle}}
