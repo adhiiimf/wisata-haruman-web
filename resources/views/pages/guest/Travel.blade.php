@@ -26,7 +26,7 @@
             <div class="w-[1200px] flex flex-wrap max-[900px]:w-auto max-[900px]:flex max-[900px]:flex-col justify-center items-center">
                 @foreach ($travel_data as $travel)
                 <div class="flex justify-center">
-                    <a href="/product/{{$travel->id}}">
+                    <a href="/travel/{{$travel->id}}">
                         <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48 m-4" style="background-image: url('{{$travel->travelImage}}')">
                             <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center text-white">
                                 {{$travel->travelTitle}}
