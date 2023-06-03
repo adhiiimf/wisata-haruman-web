@@ -1,4 +1,4 @@
-@if (request()->is('product/*') || request()->is('product'))
+@if (request()->is('product/*') || request()->is('product') || request()->is('travel') || request()->is('travel/*'))
 <div class=" bg-transparent text-purple-700">
     <div class="flex w-full p-2 pt-5 pb-5 max-sm:px-0 justify-between">
         <a href="" class="w-1/5">
