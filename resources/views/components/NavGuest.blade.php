@@ -1,7 +1,7 @@
-@if (request()->is('product/*') || request()->is('product') || request()->is('travel') || request()->is('travel/*'))
+@if (request()->is('product/*') || request()->is('product') || request()->is('travel') || request()->is('travel/*') || request()->is('article/*') || request()->is('article'))
 <div class=" bg-transparent text-purple-700">
     <div class="flex w-full p-2 pt-5 pb-5 max-sm:px-0 justify-between">
-        <a href="" class="w-1/5">
+        <div class="w-1/5">
             <div class="flex items-center ml-8 max-sm:ml-4">
                 <img class="h-auto w-[35px] inline-block" src="{{asset('assets/logo-color.png')}}" alt="">
                 <div class="ml-2">
@@ -9,12 +9,24 @@
                     <div class=" font-bold">Haruman</div>
                 </div>
             </div>
-        </a>
+        </div>
         <div class="absolute flex justify-center items-center inset-x-1/2 max-[800px]:hidden">
             <a href="/" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-700 rounded-2xl hover:text-purple-100">Beranda</a>
+            @if (request()->is('travel') || request()->is('travel/*'))
+            <a href="/travel" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-700 text-purple-100">Wisata</a>    
+            @else
             <a href="/travel" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-700 rounded-2xl hover:text-purple-100">Wisata</a>
-            <a href="/product" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-700 text-purple-100">Belanja</a>
+            @endif
+            @if (request()->is('product/*') || request()->is('product'))
+            <a href="/product" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-700 text-purple-100">Belanja</a>    
+            @else
+            <a href="/product" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-700 rounded-2xl hover:text-purple-100">Belanja</a>  
+            @endif
+            @if (request()->is('article/*') || request()->is('article'))
+            <a href="/article" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-700 text-purple-100">Artikel</a>
+            @else
             <a href="/article" class="px-3 py-2 duration-150 ease-out hover:bg-indigo-700 rounded-2xl hover:text-purple-100">Artikel</a>
+            @endif
         </div>
         <div class="flex mr-8 max-sm:mr-4 px-3 items-center bg-gradient-to-tr from-green-500 to-emerald-500 rounded-2xl duration-150 ease-out hover:!scale-105 ">
                 <a href="/login" class="flex items-center text-white">
@@ -33,7 +45,7 @@
 @else
 <div class="bg-indigo-700 text-slate-100">
     <div class="flex w-full p-2 pt-5 pb-5 max-sm:px-0 justify-between">
-        <a href="" class="w-1/5">
+        <div class="w-1/5">
             <div class="flex items-center ml-8 max-sm:ml-4">
                 <img class="h-auto w-[35px] inline-block" src="{{asset('assets/logo-white.png')}}" alt="">
                 <div class="ml-2">
@@ -41,7 +53,7 @@
                     <div class=" font-bold">Haruman</div>
                 </div>
             </div>
-        </a>
+        </div>
         <div class="absolute flex justify-center items-center inset-x-1/2 max-[800px]:hidden">
             <a href="/" class="px-3 py-2 mr-1 rounded-2xl bg-indigo-800">Beranda</a>
             <a href="/travel" class="px-3 py-2  mr-1 duration-150 ease-out hover:bg-indigo-800 rounded-2xl">Wisata</a>
