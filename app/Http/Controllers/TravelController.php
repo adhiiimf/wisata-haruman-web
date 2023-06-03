@@ -30,6 +30,14 @@ class TravelController extends Controller
         ]);
     }
 
+    public function guestShowPage(Request $request) {
+        $travel_data = Travel::join('travels__schedules','travels__schedules.id','=','travels.travels__schedules_id')->where('travels.id',$request->travel_id)->first();
+        // return $product_data;
+        return view('pages.guest.ViewTravel',[
+            'travel_data' => $travel_data
+        ]);
+    }
+
     public function createForm() {
         $admins_id = Auth::user()->first();
         $schedule_data = TravelSchedule::orderBy('id','asc')->get();
