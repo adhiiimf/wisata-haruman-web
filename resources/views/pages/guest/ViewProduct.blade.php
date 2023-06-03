@@ -50,6 +50,9 @@
                 </div>
             </div>
         </div>
+        <footer class="text-center mt-24 pb-8">
+            &copy;wisataharuman.com 2023
+        </footer>
     </div>
 </body>
 </html>
