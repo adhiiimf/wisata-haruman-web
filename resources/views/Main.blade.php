@@ -163,42 +163,17 @@
             </div>
             <div class="swiper travelSwiper">
                 <div class="swiper-wrapper pb-20">
-                    <div class="swiper-slide !flex !justify-center">
-                        <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/img5.jpg')}}')">
-                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
-                                    Langit Parabon
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !flex !justify-center">
-                        <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/destinasijeruk-min.jpg')}}')">
-                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
-                                    Petik Jeruk
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !flex !justify-center">
-                        <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/jelajahkebun-min.jpg')}}')">
-                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
-                                    Jelajah Kebun
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !flex !justify-center">
-                        <a href="">
-                            <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{asset('assets/petiktomat-min.jpg')}}')">
-                                <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
-                                    Petik Tomat
-                                </span>
-                            </div>
-                        </a>
-                    </div>
+                    @foreach ($travel_data as $travel)
+                        <div class="swiper-slide !flex !justify-center">
+                            <a href="/travel/{{$travel->id}}">
+                                <div class="relative flex text-center items-center justify-center w-72 h-56 bg-violet-800 bg-cover bg-center rounded-2xl brightness-90 max-sm:w-52 max-sm:h-48" style="background-image: url('{{$travel->travelImage}}')">
+                                    <span class="text-2xl flex relative !brightness-100 bg-black w-full py-2 bg-opacity-30 text-center justify-center items-center">
+                                        {{$travel->travelTitle}}
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

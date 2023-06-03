@@ -70,10 +70,8 @@ Route::middleware(['guest:admins'])->group(function () {
     Route::get('/',[MainController::class, 'landingpage'])->name('lp');
 
     // travel page
-    Route::get('/travel', function () {
-        return view('pages.guest.Travel');
-    })->name('pages.guest.Travel');
-    
+    Route::get('/travel',[TravelController::class,'guestShowAll'])->name('pages.guest.Travel');
+
     Route::get('/travel/{travel_id}',[TravelController::class,'guestShowPage'])->name('pages.guest.ViewTravel');
 
     // product page
