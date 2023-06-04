@@ -62,6 +62,10 @@ Route::middleware(['auth:admins'])->group(function () {
 
     Route::get('/adminViewTravel/{travel_id}',[TravelController::class,'showIndex'])->name('pages.admin.ViewTravel');
 
+    Route::get('/adminEditTravel/{travel_id}',[TravelController::class,'edit'])->name('pages.admin.EditTravel');
+
+    Route::post('post/travel/update/{travel_id}',[TravelController::class,'update'])->name('pages.admin.UpdateTravel');
+
     Route::post('post/travel',[TravelController::class,'postTravel'])->name('post.travel');
     // end of travel feauture
 
