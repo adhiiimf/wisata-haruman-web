@@ -9,11 +9,12 @@ class ArticleController extends Controller
 {
     public function show() {
         $admins_id = Auth::user()->first();
-        $article_data = Article::where('admins_id',$admins_id['id'])->get();
-        return $article_data;
-        // return view('pages.admin.Article',[
-        //     'article_data' => $article_data
-        // ]);
+        $article_data = Article::where('admins_id',$admins_id['id'])->orderBy('updated_at', 'desc')->get();
+        $admins_id = explode(' ',$admins_id->name)[0];
+        return view('pages.admin.Article',[
+            'admin_name' => $admins_id,
+            'article_data' => $article_data
+        ]);
     }
     
     public function postArticle(Request $request)
@@ -59,7 +60,6 @@ class ArticleController extends Controller
                 'content' => $content,
                 'admins_id' => $admins_id['id']
         ]);
-        
-        dd($post->toArray());
+        return redirect('/adminArticle')->with(['success' => 'Berhasil Membuat Artikel Baru']);
     }
 }
