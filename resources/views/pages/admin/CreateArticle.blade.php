@@ -10,11 +10,24 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
     
 <body>
-    <div class="container mt-5">
-        <h1 class="text-3xl">Artikel Wisata Haruman</h1>
+    {{-- aside navbar --}}
+    @component('components.NavAdmin')
+        
+    @endcomponent
+    {{-- content --}}
+    <div class="sm:ml-64 p-5">
+        <div class="w-auto flex justify-between items-center">
+            <h2 class="text-2xl !font-semibold">Tambah Artikel Kamu</h2>
+            <a class="bg-red-500 py-1 px-2 rounded-2xl flex items-center justify-center text-gray-200 no-underline duration-150 ease-in-out hover:no-underline hover:bg-red-600 hover:scale-105 hover:text-green-100" href="/adminArticle">
+                <span class="max-lg:!text-2xl !text-3xl material-icons">arrow_back</span>
+                <span class="font-semibold pr-2">Kembali</span>
+            </a>
+        </div>
         <form method="post" action="{{ route('post.article') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group pt-3">
