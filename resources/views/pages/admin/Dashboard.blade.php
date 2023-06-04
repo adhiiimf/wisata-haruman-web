@@ -52,7 +52,7 @@
         <div class=" flex flex-row py-4 lg:py-5 justify-center w-full rounded-3xl flex-wrap">
             
             <a class="no-underline hover:no-underline" href="/adminProduct">
-                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-72 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
+                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-60 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
                     <div class="flex flex-col justify-center items-center ">
                         <div>
                             <span class="max-lg:!text-3xl !text-5xl material-icons mr-1 text-gray-200">inventory_2</span>
@@ -62,7 +62,7 @@
                 </div>
             </a>
             <a class="no-underline hover:no-underline" href="/adminTravel">
-                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-72 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
+                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-60 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
                     <div class="flex flex-col justify-center items-center ">
                         <div>
                             <span class="max-lg:!text-3xl !text-5xl material-icons mr-1 text-gray-200">travel_explore</span>
@@ -72,7 +72,7 @@
                 </div>
             </a>
             <a class="no-underline hover:no-underline" href="/adminArticle">
-                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-72 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
+                <div class="flex items-center justify-center m-2 py-3 px-7 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-3xl w-60 duration-100 ease-linear hover:scale-105 hover:to-indigo-600 hover:from-purple-600">
                     <div class="flex flex-col justify-center items-center ">
                         <div>
                             <span class="max-lg:!text-3xl !text-5xl material-icons mr-1 text-gray-200">newspaper</span>
