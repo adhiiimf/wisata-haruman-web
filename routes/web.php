@@ -44,6 +44,10 @@ Route::middleware(['auth:admins'])->group(function () {
 
     Route::get('/adminViewProduct/{product_id}',[ProductController::class,'showIndex'])->name('pages.admin.ViewProduct');
 
+    Route::get('/adminEditProduct/{product_id}',[ProductController::class,'edit'])->name('pages.admin.EditProduct');
+
+    Route::post('post/product/update/{product_id}',[ProductController::class,'update'])->name('pages.admin.UpdateProduct');
+
     Route::get('/adminDelProduct/{product_id}',[ProductController::class,'isDelete'])->name('pages.admin.DeleteProduct');
 
     Route::post('/adminDelProduct/del/{product_id}',[ProductController::class,'deleteNow'])->name('pages.admin.DeleteProduct.Fix');
