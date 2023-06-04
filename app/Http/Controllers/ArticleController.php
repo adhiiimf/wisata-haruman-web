@@ -44,7 +44,7 @@ class ArticleController extends Controller
             $image->setAttribute('src', $image_name);
             }
             
-            // for thumbnail image
+        // for thumbnail image
         if($request->file('articleImage')){
             $file= $request->file('articleImage');
             $filename= time().$file->getClientOriginalName();
@@ -59,8 +59,7 @@ class ArticleController extends Controller
                 'content' => $content,
                 'admins_id' => $admins_id['id']
         ]);
-
-        // log result
+        
         dd($post->toArray());
     }
 }
