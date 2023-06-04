@@ -11,7 +11,6 @@ class ProductController extends Controller
         $admins_id = Auth::user()->first();
         $product_data = Product::where('admins_id',$admins_id['id'])->orderBy('created_at','desc')->get();
         $admins_id = explode(' ',$admins_id->name)[0];
-        // return $product_data;
         return view('pages.admin.Product',[
             'admin_name' => $admins_id,
             'product_data' => $product_data
@@ -21,7 +20,6 @@ class ProductController extends Controller
     public function showIndex(Request $request) {
         $admins_id = Auth::user()->first();
         $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
-        // return $product_data;
         return view('pages.admin.ViewProduct',[
             'product_data' => $product_data
         ]);
@@ -29,7 +27,6 @@ class ProductController extends Controller
 
     public function guestShowAll(Request $request) {
         $product_data = Product::orderBy('created_at','desc')->get();
-        // return $product_data;
         return view('pages.guest.Product',[
             'product_data' => $product_data
         ]);
@@ -37,7 +34,6 @@ class ProductController extends Controller
 
     public function guestShowPage(Request $request) {
         $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
-        // return $product_data;
         return view('pages.guest.ViewProduct',[
             'product_data' => $product_data
         ]);
@@ -46,7 +42,6 @@ class ProductController extends Controller
     public function isDelete(Request $request) {
         $admins_id = Auth::user()->first();
         $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
-        // return $product_data;
         if (!$product_data) {
             return redirect('/404');
         }
@@ -78,7 +73,7 @@ class ProductController extends Controller
              'isPreorder' => 'required',
              'phoneNumber' => 'required'
         ]);   
-            // for thumbnail image
+        // for thumbnail image
         if($request->file('productImage')){
             $file= $request->file('productImage');
             $filename= time().$file->getClientOriginalName();
@@ -96,8 +91,6 @@ class ProductController extends Controller
                 'phoneNumber' => $request->phoneNumber,
                 'admins_id' => $admins_id['id']
         ]);
-        
-        // dd($post->toArray());
         return redirect('/adminProduct');
     }
 
