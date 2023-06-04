@@ -50,7 +50,7 @@
                         Sekarang Juga
                     </span>
                 </div>
-                <a href="" class="flex text-base">
+                <a href="https://goo.gl/maps/MAmHda9moL54YTPQA" target="_blank" class="flex text-base">
                     <div class="flex py-2 px-4 mt-2 bg-slate-700 rounded-xl shadow-lg shadow-slate-800">
                         <div class="flex items-center">
                             <div class="h-full items-center p-1">

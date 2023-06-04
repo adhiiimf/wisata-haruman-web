@@ -45,8 +45,7 @@
                     <select name="travels__schedules_id" class="py-2 bg-purple-200 rounded-xl px-1">
                         @foreach ($schedule_data as $option)
                         <option class="mx-2" value="{{$option->id}}">{{$option->name}}</option>
-                        @endforeach
-                        
+                        @endforeach        
                     </select>
                 </div>
                 <div class="form-group flex flex-col">

@@ -23,7 +23,7 @@ class TravelController extends Controller
         $admins_id = Auth::user()->first();
         $travel_data = Travel::join('travels__schedules','travels__schedules.id','=','travels.travels__schedules_id')->where('travels.id',$request->travel_id)->first();
         $admins_id = explode(' ',$admins_id->name)[0];
-        // return $product_data;
+        // return $travel_data;
         return view('pages.admin.ViewTravel',[
             'admin_name' => $admins_id,
             'travel_data' => $travel_data
@@ -39,7 +39,7 @@ class TravelController extends Controller
 
     public function guestShowPage(Request $request) {
         $travel_data = Travel::join('travels__schedules','travels__schedules.id','=','travels.travels__schedules_id')->where('travels.id',$request->travel_id)->first();
-        // return $product_data;
+        // return $travel_data;
         return view('pages.guest.ViewTravel',[
             'travel_data' => $travel_data
         ]);
@@ -81,8 +81,39 @@ class TravelController extends Controller
                 'admins_id' => $admins_id['id']
         ]);
         
-        echo $post;
-        // log result
-        dd($post->toArray());
+        return redirect('/adminTravel');
+    }
+
+    public function edit(Request $request)
+    {
+        $travel_data = Travel::join('admins','admins.id','=','travels.admins_id')->where('travels.id',$request->travel_id)->select('travels.*','admins.name')->first();
+        $schedule_data = TravelSchedule::orderBy('id','asc')->get();
+        return view('pages.admin.EditTravel',[
+            'travel' => $travel_data,
+            'schedule_data' => $schedule_data
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $admins_id = Auth::user()->first();
+        $this->validate($request, [
+            'travelTitle' => 'required',
+            'description' => 'required',
+            'phoneNumber' => 'required',
+            'travels__schedules_id' => 'required',
+        ]);
+        $travel_data = Travel::where('travels.id',$request->travel_id)->first();
+        if ($admins_id->id == $travel_data->admins_id) {
+            Travel::where('travels.id',$request->travel_id)->update([
+                'travelTitle' => $request->travelTitle,
+                'description' => $request->description,
+                'phoneNumber' => $request->phoneNumber,
+                'travels__schedules_id' => $request->travels__schedules_id,
+            ]);
+            return redirect('/adminTravel')->with(['success' => 'Wisata Berhasil Diperbarui']);
+        }else {
+            return view('errors.404');
+        }
     }
 }
