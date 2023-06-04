@@ -25,6 +25,12 @@
                 <span class="font-semibold pr-2">Tambah</span>
             </a>
         </div>
+        @if ($message = Session::get('success'))
+            <div id="msgBox" class="p-2 bg-green-300 mt-4 rounded-2xl">
+                <button type="button" class="close mr-2" onclick="closeMsg()">×</button>	
+                <strong class="text-black ml-2">{{ $message }}</strong>
+            </div>
+        @endif
         @if ($product_data->count()==0)
             <div class="w-auto flex justify-center items-center mt-5">
                 <p class="text-2xl !font-semibold text-center text-gray-700">Hai {{$admin_name}}, <br>
@@ -69,7 +75,7 @@
                     <span class="max-lg:!text-1xl !text-2xl material-icons mr-1">visibility</span>
                     <span class="font-semibold pr-1">Lihat</span>
                 </a>
-                <a class="bg-orange-500 py-1 px-2 rounded-2xl flex items-center justify-center text-gray-200 no-underline duration-150 ease-in-out hover:no-underline hover:bg-orange-600 hover:scale-105 hover:text-green-100 my-1" href="">
+                <a class="bg-orange-500 py-1 px-2 rounded-2xl flex items-center justify-center text-gray-200 no-underline duration-150 ease-in-out hover:no-underline hover:bg-orange-600 hover:scale-105 hover:text-green-100 my-1" href="/adminEditProduct/{{$data->id}}">
                     <span class="max-lg:!text-1xl !text-2xl material-icons mr-1">edit</span>
                     <span class="font-semibold pr-1">Edit</span>
                 </a>
@@ -84,5 +90,11 @@
             &copy;wisataharuman.com 2023
         </footer>
     </div>
+    <script>
+        function closeMsg(){
+            var el = document.getElementById("msgBox");
+            el.classList.add("hidden");
+        }
+    </script>
 </body>
 </html>

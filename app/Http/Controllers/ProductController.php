@@ -100,4 +100,39 @@ class ProductController extends Controller
         // dd($post->toArray());
         return redirect('/adminProduct');
     }
+
+    public function edit(Request $request)
+    {
+        $product_data = Product::join('admins','admins.id','=','products.admins_id')->where('products.id',$request->product_id)->select('products.*','admins.name')->first();
+        return view('pages.admin.EditProduct',[
+            'product' => $product_data,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $admins_id = Auth::user()->first();
+        $this->validate($request, [
+            'productTitle' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'stocks' => 'required',
+            'isPreorder' => 'required',
+            'phoneNumber' => 'required'
+        ]);
+        $product_data = Product::where('products.id',$request->product_id)->first();
+        if ($admins_id->id == $product_data->admins_id) {
+            Product::where('products.id',$request->product_id)->update([
+                'productTitle' => $request->productTitle,
+                'description' => $request->description,
+                'price' => $request->price,
+                'stocks' => $request->stocks,
+                'isPreorder' => $request->isPreorder,
+                'phoneNumber' => $request->phoneNumber,
+            ]);
+            return redirect('/adminProduct')->with(['success' => 'Produk Berhasil Diperbarui']);
+        }else {
+            return view('errors.404');
+        }
+    }
 }
