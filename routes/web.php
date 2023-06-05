@@ -31,6 +31,8 @@ Route::middleware(['auth:admins'])->group(function () {
     Route::get('/adminCreateArticle', function () {
         return view('pages.admin.CreateArticle');
     })->name('pages.admin.CreateArticle');
+
+    Route::get('/adminViewArticle/{article_id}',[ArticleController::class,'showIndex'])->name('pages.admin.ViewArticle');
     
     Route::post('post/article',[ArticleController::class,'postArticle'])->name('post.article');
     // end of admin article feature

@@ -17,6 +17,14 @@ class ArticleController extends Controller
         ]);
     }
     
+    public function showIndex(Request $request) {
+        $admins_id = Auth::user()->first();
+        $article_data = Article::join('admins','admins.id','=','articles.admins_id')->where('articles.id',$request->article_id)->select('articles.*','admins.name')->first();
+        return view('pages.admin.ViewArticle',[
+            'article_data' => $article_data
+        ]);
+    }
+    
     public function postArticle(Request $request)
     {
         $admins_id = Auth::user()->first();
@@ -61,5 +69,32 @@ class ArticleController extends Controller
                 'admins_id' => $admins_id['id']
         ]);
         return redirect('/adminArticle')->with(['success' => 'Berhasil Membuat Artikel Baru']);
+    }
+
+    public function edit(Request $request)
+    {
+        $article_data = Article::join('admins','admins.id','=','articles.admins_id')->where('articles.id',$request->article_id)->select('articles.*','admins.name')->first();
+        return view('pages.admin.EditArticle',[
+            'article' => $article_data,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $admins_id = Auth::user()->first();
+        $this->validate($request, [
+            'articleTitle' => 'required',
+            'content' => 'required'
+        ]);
+        $article_data = Article::where('articles.id',$request->article_id)->first();
+        if ($admins_id->id == $article_data->admins_id) {
+            Article::where('articles.id',$request->article_id)->update([
+                'articleTitle' => $request->articleTitle,
+                'content' => $request->content
+            ]);
+            return redirect('/adminArticle')->with(['success' => 'Produk Berhasil Diperbarui']);
+        }else {
+            return view('errors.404');
+        }
     }
 }
