@@ -31,6 +31,17 @@
 
 </head>
 
+<style>
+    .article-swiper-wrapper > .swiper-slide{
+        filter: blur(2px);
+        opacity: 75%;
+    }
+    .article-swiper-wrapper > .swiper-slide-active{
+        filter: blur(0px);
+        opacity: 100%;
+    }
+</style>
+
 <body class="font-poppins">
     
     <!-- Navbar Start -->
@@ -215,18 +226,34 @@
                 <h1 class="text-5xl max-[800px]:text-3xl text-slate-900">Artikel <span class="font-bold">Haruman</span></h1>
                 <hr class="w-1/4 mt-5 border-2 border-violet-500">
             </div>
-            <div class="grid grid-cols-2 gap-8 mx-32 max-lg:mx-10 max-[800px]:mx-14 max-[800px]:grid-cols-1 mt-12 max-sm:mx-0">
-                @for ($i = 0; $i < 4; $i++)
-                <a href="">
-                    <div
-                    class="flex justify-center relative items-center h-full text-xl rounded-xl bg-slate-400 overflow-hidden duration-100 ease-linear hover:scale-105">
-                    <img src="{{asset('assets/jeruk-min.jpg')}}" alt="" class="object-cover brightness-50">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
-                        <p class="m-5 text-start">Cara menanam bibit buah jeruk yang baik dan benar</p>
-                    </div>
-                </div>
-                </a>
+            {{--  For grid over 800-width  --}}
+            <div id="article-grid" class="grid grid-cols-2 gap-8 mx-32 max-lg:mx-10 max-[800px]:mx-14 max-[800px]:grid-cols-1 mt-12 max-sm:mx-0">
+                @for ($i = 0; $i < 4; $i++)        
+                    <a href="">
+                        <div class="flex justify-center relative items-center h-full text-xl rounded-xl bg-slate-400 overflow-hidden duration-100 ease-linear hover:scale-105">
+                            <img src="{{asset('assets/jeruk-min.jpg')}}" alt="" class="object-cover brightness-50">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                                <p class="m-5 text-start">Cara menanam bibit buah jeruk yang baik dan benar</p> 
+                            </div>
+                        </div>
+                    </a>
                 @endfor
+            </div>
+            {{--  For swipe under 800-width  --}}
+            <div id="article-swipe" class="grid grid-cols-2 gap-8 mx-32 max-lg:mx-10 max-[800px]:mx-14 max-[800px]:grid-cols-1 mt-12 max-sm:mx-0 swiper articleSwiper">
+                <div class="swiper-wrapper article-swiper-wrapper">
+                    @for ($i = 0; $i < 4; $i++)
+                        <a href="" class="swiper-slide article-slide transition-all">
+                            <div class="flex justify-center relative items-center h-full text-xl rounded-xl bg-slate-400 overflow-hidden duration-100 ease-linear hover:scale-105">
+                                <img src="{{asset('assets/jeruk-min.jpg')}}" alt="" class="object-cover brightness-50">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-clip">
+                                    <p class="m-5 text-start">Cara menanam bibit buah jeruk yang baik dan benar</p> 
+                                </div>
+                            </div>
+                        </a>
+                    @endfor
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
             <div class="flex float-right underline text-slate-900 mx-32 max-[800px]:mx-0 mt-3">
                 <a href="" class="text-xl font-semibold">Artikel lainnya..</a>
