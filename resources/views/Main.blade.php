@@ -98,7 +98,7 @@
         </div>
     </div>
     <!-- Intro Start -->
-    <div class="flex justify-center items-center bg-gradient-to-t from-indigo-600 to-violet-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-6">
+    <div class="flex justify-center items-center bg-gradient-to-t from-yellow-500 to-violet-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-6">
         <div class="swiper videoSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide !flex !justify-center">
@@ -164,9 +164,37 @@
         </div>
     </div>
     <!-- Intro End -->
-
+    <div class="flex flex-col bg-gradient-to-t from-orange-400 to-yellow-500  text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-6 justify-center items-center">
+        <div class="container flex p-2 pb-20 items-center justify-center max-[800px]:flex max-[800px]:flex-col">
+            <div class="w-1/2 max-[800px]:w-3/4 max-sm:w-full">
+                <div class="mb-5 rounded-xl overflow-auto shadow-lg shadow-gray-700">
+                    <img class="w-full" src="{{asset('assets/treasureofharuman.jpg')}}" alt="">
+                </div>
+                <hr class="border-2 border-yellow-800">
+            </div>
+            <div class="w-1/2 flex flex-col mt-8 mx-24 max-[800px]:mx-4 max-[800px]:w-3/4  max-sm:w-full">
+                <div class="mb-2">
+                    <h1 class="text-3xl">Treasure <br><span class="font-bold">of Haruman</span></h1>
+                    <hr class="w-1/4 mt-2 border-2 border-yellow-800">
+                    <br>
+                    <p class="text-xl text-gray-100">
+                        Artikel seputar rahasia dari Desa Haruman. Yuk Baca untuk lihat lebih lanjut keindahan alam dan masyarakat Desa Haruman
+                    </p>
+                </div>
+                <a class="flex item-center" href="{{asset('assets/MAJALAH_KKN_HARUMAN.pdf')}}" target="_blank">
+                    <div class="rounded-full py-2 px-4 bg-gradient-to-tr from-gray-800 to-gray-900 shadow-2xl flex items-center hover:scale-105 duration-150 ease-linear">
+                        <i class="fas fa-book-open text-orange-300"></i>
+                        <span class="ml-2 text-orange-300 font-semibold">
+                            Baca Artikel
+                        </span>
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- Destination Start -->
-    <div class="flex justify-center bg-gradient-to-t from-violet-700 to-indigo-600 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
+    <div class="flex justify-center bg-gradient-to-t from-violet-700 to-orange-400 text-slate-100 py-20 max-[800px]:py-10 px-20 max-sm:px-4">
         <div class="container p-2">
             <div class="w-1/2 mb-10">
                 <h1 class="text-5xl max-[800px]:text-3xl">Destinasi <span class="font-bold">Haruman</span></h1>

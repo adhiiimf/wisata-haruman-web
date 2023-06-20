@@ -10,7 +10,7 @@
       rel="stylesheet">
 </head>
     
-<body class="bg-purple-200 font-poppins">
+<body class="bg-purple-200">
     {{-- aside navbar --}}
     @component('components.NavAdmin')
         
