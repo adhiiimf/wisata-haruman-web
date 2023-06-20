@@ -170,7 +170,7 @@
                         Artikel seputar rahasia dari Desa Haruman. Yuk Baca untuk lihat lebih lanjut keindahan alam dan masyarakat Desa Haruman
                     </p>
                 </div>
-                <a class="flex item-center" href="https://www.youtube.com/watch?v=hMHOxXZvsnI&t=81s" target="_blank">
+                <a class="flex item-center" href="{{asset('assets/MAJALAH_KKN_HARUMAN.pdf')}}" target="_blank">
                     <div class="rounded-full py-2 px-4 bg-gradient-to-tr from-gray-800 to-gray-900 shadow-2xl flex items-center hover:scale-105 duration-150 ease-linear">
                         <i class="fas fa-book-open text-orange-300"></i>
                         <span class="ml-2 text-orange-300 font-semibold">
